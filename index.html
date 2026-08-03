@@ -6,370 +6,121 @@
 <title>بتن‌یار | پخش و فروش مصالح ساختمانی</title>
 <meta name="description" content="بتن‌یار؛ مرجع تخصصی خرید و فروش مصالح ساختمانی. سیمان، شن و ماسه، آجر، بلوک، سفال، میلگرد و بیش از ۲۰۰ قلم کالای ساختمانی با قیمت روز و ارسال سریع به تهران و کرج.">
 <meta name="theme-color" content="#171b22">
+<meta name="robots" content="index, follow">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="بتن‌یار">
+<meta property="og:title" content="بتن‌یار | پخش و فروش مصالح ساختمانی">
+<meta property="og:description" content="سیمان، شن و ماسه، آجر، بلوک، سفال، میلگرد و بیش از ۲۰۰ قلم کالای ساختمانی با قیمت روز و ارسال سریع به تهران و کرج.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Vazirmatn',system-ui,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.9;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
+<link rel="stylesheet" href="css/style.css">
+<script defer src="js/main.js"></script>
+<noscript>
+  <style>
+    .reveal { opacity: 1; transform: none; }
+    .marquee-track { animation: none; }
+  </style>
+</noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "بتن‌یار",
+  "description": "پخش و فروش تخصصی مصالح ساختمانی در تهران و کرج",
+  "telephone": "+982177981500",
+  "foundingDate": "2008",
+  "areaServed": ["تهران", "کرج"],
+  "openingHours": "Mo-Su 08:00-20:00",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "کرج",
+    "streetAddress": "نجف‌آباد کرج، بلوار یاس، انبار ۸"
+  }
 }
-:root{
-  --bg:#f5f4f1;
-  --bg-soft:#ebeae5;
-  --surface:#ffffff;
-  --ink:#171b22;
-  --ink-2:#222a35;
-  --line:#e2e0da;
-  --text:#333a44;
-  --muted:#767e89;
-  --accent:#e26e23;
-  --accent-2:#f4a140;
-  --accent-soft:#fbeedf;
-  --green:#2f9e5f;
-  --shadow:0 1px 2px rgba(23,27,34,.05),0 8px 24px rgba(23,27,34,.06);
-  --shadow-lg:0 20px 50px rgba(23,27,34,.14);
-  --radius:16px;
-}
-.container{max-width:1180px;margin:auto;padding:0 24px}
-a{text-decoration:none;color:inherit}
-ul{list-style:none}
-img{max-width:100%;display:block}
-.cta{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;font-weight:700;font-size:15.5px;padding:14px 28px;border-radius:12px;transition:.25s;box-shadow:0 8px 20px rgba(224,138,35,.32)}
-.cta:hover{background:#c97a1c;transform:translateY(-2px);box-shadow:0 12px 26px rgba(224,138,35,.4)}
-.cta-ghost{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--ink);font-weight:600;font-size:15.5px;padding:13px 26px;border:1.5px solid var(--line);border-radius:12px;transition:.25s}
-.cta-ghost:hover{border-color:var(--ink);background:#fff}
-.badge{display:inline-block;background:var(--accent-soft,#fbeedf);color:var(--accent);font-size:13px;font-weight:600;padding:7px 16px;border-radius:999px;letter-spacing:.2px}
-section{position:relative}
-
-/* ---------- Top bar ---------- */
-.topbar{background:var(--ink);color:#cdd3da;font-size:13px;padding:9px 0}
-.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
-.topbar a{display:inline-flex;align-items:center;gap:7px;color:#cdd3da}
-.topbar a:hover{color:#fff}
-.topbar .skew{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:2px 14px;border-radius:5px}
-.tb-row{display:flex;gap:22px;align-items:center}
-
-/* ---------- Header ---------- */
-.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);transition:.3s}
-.header.shrunk{box-shadow:var(--shadow)}
-.header .container{display:flex;align-items:center;justify-content:space-between;height:78px;transition:.3s}
-.header.shrunk .container{height:64px}
-.logo{display:flex;align-items:center;gap:12px}
-.logo-mark{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2,#c96f16));display:grid;place-items:center;color:#fff;font-weight:800;font-size:19px;box-shadow:0 6px 16px rgba(224,138,35,.35);letter-spacing:-1px}
-.logo b{font-size:22px;color:var(--ink);display:block;line-height:1.2}
-.logo span{font-size:12px;color:var(--muted);letter-spacing:.5px}
-.nav{display:flex;align-items:center;gap:8px}
-.nav-links{display:inline-flex;align-items:center;gap:8px}
-.nav-links a{font-size:15px;font-weight:500;color:#4a515b;padding:9px 16px;border-radius:9px;transition:.2s}
-.nav-links a:hover{color:var(--accent);background:var(--accent-soft,#fdf3e7)}
-.nav-links .cta{padding:11px 22px}
-.nav-head,.nav-foot{display:none}
-.drawer{display:none}
-.nav-backdrop{display:none}
-.burger{display:none;align-items:center;justify-content:center;gap:5px;width:44px;height:44px;background:#fff;border:1px solid var(--line);border-radius:11px;cursor:pointer;flex:none}
-.burger span{display:block;width:20px;height:2.2px;background:var(--ink);border-radius:2px;transition:.3s}
-[id]{scroll-margin-top:96px}
-
-/* ---------- Hero ---------- */
-.hero{background:radial-gradient(1200px 600px at 85% -10%,#2b3544 0%,transparent 60%),linear-gradient(180deg,#1a2028 0%,#151a20 100%);color:#fff;overflow:hidden}
-.hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:92px 0 108px}
-.hero h1{font-size:clamp(29px,5.6vw,52px);line-height:1.45;font-weight:800;margin:22px 0 20px;letter-spacing:-.5px}
-.hero h1 .grad{background:linear-gradient(120deg,var(--accent-2,#f4a140),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p.lead{font-size:17px;color:#b9bfc8;max-width:520px;margin-bottom:34px}
-.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.hero-ctas .cta-ghost{color:#fff;border-color:rgba(255,255,255,.28)}
-.hero-ctas .cta-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06);color:#fff}
-.hero-points{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px;padding-top:30px;border-top:1px solid rgba(255,255,255,.12)}
-.hero-points div{display:flex;gap:10px;align-items:flex-start}
-.hero-points svg{width:22px;height:22px;flex:none;margin-top:4px;color:var(--accent-2,#f6a140)}
-.hero-points b{font-size:15px;display:block;line-height:1.5}
-.hero-points span{font-size:13px;color:#9aa1ac}
-
-/* Hero visual */
-.hero-visual{position:relative}
-.truck-card{position:relative;background:linear-gradient(160deg,#242b36,#1b2028);border:1px solid rgba(255,255,255,.09);border-radius:22px;padding:26px;box-shadow:0 30px 60px rgba(0,0,0,.4)}
-.truck-card .tc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.truck-card .tc-top span{font-size:13px;color:#9aa1ad}
-.truck-card .tc-top b{font-size:16px}
-.truck-art{background:radial-gradient(220px 140px at 60% 40%,rgba(240,181,96,.14),transparent 70%);height:210px;position:relative}
-.truck-art svg{position:absolute;inset:auto auto 6px 50%;transform:translateX(50%);width:100%;max-width:310px;filter:drop-shadow(0 14px 28px rgba(0,0,0,.5))}
-.tc-footer{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.09)}
-.tc-footer div b{display:block;color:#fff;font-size:16px}
-.tc-footer div span{font-size:12px;color:#8f97a3}
-.float-card{position:absolute;background:#fff;border-radius:14px;box-shadow:var(--shadow-lg);padding:14px 18px;display:flex;gap:12px;align-items:center}
-.float-card .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;flex:none}
-.float-card b{font-size:14px;color:var(--ink);display:block;line-height:1.4}
-.float-card span{font-size:12px;color:var(--muted)}
-.fc-1{top:-34px;right:-14px;animation:floaty 5s ease-in-out infinite}
-.fc-2{bottom:-26px;left:-20px;animation:floaty 6s ease-in-out 1s infinite}
-.fc-3{top:120px;left:-32px;animation:floaty 5.5s ease-in-out .6s infinite}
-.ic-amber{background:var(--accent-soft);color:var(--accent)}
-.ic-green{background:#e5f5ec;color:var(--green)}
-.ic-blue{background:#e5effa;color:#2f6bb3}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-
-/* ---------- Marquee ---------- */
-.marquee{border-block:1px solid var(--line);background:var(--surface);overflow:hidden;padding:17px 0}
-.marquee-track{display:flex;gap:0;white-space:nowrap;animation:scroll 30s linear infinite;width:max-content}
-.marquee span{font-size:15px;font-weight:600;color:#4a515c;padding:0 26px;display:inline-flex;align-items:center;gap:10px}
-.marquee span::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);display:inline-block}
-.marquee span:last-child::after{display:none}
-.marquee:hover .marquee-track{animation-play-state:paused}
-@keyframes scroll{to{transform:translateX(50%)}}
-.marquee-track{animation-direction:reverse}
-
-/* ---------- Stats ---------- */
-.stats{padding:74px 0;background:var(--bg-soft)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;text-align:center;transition:.25s}
-.stat:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
-.stat b{font-size:clamp(30px,5vw,38px);font-weight:800;color:var(--ink);display:block;line-height:1.2}
-.stat b i{font-style:normal;color:var(--accent)}
-.stat span{color:var(--muted);font-size:14.5px}
-
-/* ---------- Section titles ---------- */
-.section-head{text-align:center;max-width:640px;margin:0 auto 52px}
-.section-head h2{font-size:clamp(23px,4.4vw,36px);color:var(--ink);font-weight:800;line-height:1.4;margin:14px 0 12px}
-.section-head p{color:var(--muted);font-size:16px}
-.sect{padding:92px 0}
-
-/* ---------- Categories ---------- */
-.products{background:var(--surface)}
-.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.cat{position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:30px 24px;background:var(--paper);transition:.3s;overflow:hidden}
-.cat::after{content:"";position:absolute;inset:auto 0 0 0;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transform:scaleX(0);transform-origin:right;transition:.3s}
-.cat:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:#d8d4cc}
-.cat:hover::after{transform:scaleX(1)}
-.cat-ic{width:54px;height:54px;border-radius:13px;display:grid;place-items:center;margin-bottom:18px}
-.ic-amber{background:var(--accent-soft);color:var(--accent)}
-.ic-blue2{background:#e8f0fb;color:#3f71b5}
-.ic-green2{background:#e6f4ec;color:#0f8f58}
-.ic-rose{background:#fdecea;color:#d6564f}
-.ic-sand{background:#f6f0e0;color:#a9802f}
-.ic-slate2{background:#e9ecef;color:#5a6772}
-.ic-teal{background:#e2f2f3;color:#2c9490}
-.ic-violet{background:#efebfb;color:#7a5cc8}
-.cat h3{font-size:18px;color:var(--ink);font-weight:700;margin-bottom:6px}
-.cat p{font-size:13.5px;color:var(--muted);margin-bottom:14px}
-.cat a{font-size:13.5px;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
-.cat a:hover{gap:10px;transition:.2s}
-
-/* ---------- Why us ---------- */
-.why{background:radial-gradient(900px 500px at 10% 10%,#232a36 0%,transparent 55%),linear-gradient(180deg,#171b22,#14181f);color:#fff}
-.why .section-head h2{color:#fff}
-.why .section-head p{color:#9aa1ad}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.why-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:30px 26px;transition:.3s}
-.why-card:hover{background:rgba(255,255,255,.07);transform:translateY(-5px)}
-.why-card .num{font-size:13px;font-weight:800;color:var(--accent-2);letter-spacing:1px}
-.why-card h3{font-size:18px;margin:10px 0 10px;display:flex;gap:10px;align-items:center}
-.why-card h3 svg{width:22px;height:22px;color:var(--accent-2)}
-.why-card p{font-size:14px;color:#aab1bb}
-
-/* ---------- Prices / Product list ---------- */
-.prices{background:var(--paper)}
-.price-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
-.price-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.25s}
-.price-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
-.pc-media{height:150px;background:linear-gradient(140deg,#eef0f2,#e6e9ec);display:grid;place-items:center;position:relative;overflow:hidden}
-.pc-media::before{content:"";position:absolute;width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.6);filter:blur(2px)}
-.pc-media svg{position:relative;width:74px;height:74px;color:#8b95a1;transition:.3s}
-.price-card:hover .pc-media svg{color:var(--accent);transform:scale(1.08)}
-.pc-tag{position:absolute;top:12px;right:12px;background:var(--accent);color:#fff;font-size:11.5px;font-weight:700;padding:4px 11px;border-radius:20px;z-index:2}
-.pc-body{padding:18px 20px}
-.pc-body h3{font-size:16.5px;color:var(--ink);font-weight:700}
-.pc-body .pc-row{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
-.pc-price{font-size:15.5px;font-weight:800;color:var(--accent)}
-.pc-price small{font-size:12px;color:var(--muted);font-weight:500}
-.pc-note{font-size:12.5px;color:var(--muted)}
-
-/* ---------- Steps ---------- */
-.steps{background:var(--surface)}
-.step-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.step{position:relative;padding:26px 22px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);text-align:center}
-.step-num{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--accent-2),var(--accent));color:#fff;font-weight:800;font-size:19px;display:grid;place-items:center;margin:0 auto 16px;box-shadow:0 8px 18px rgba(224,138,35,.3)}
-.step h3{font-size:16.5px;color:var(--ink);margin-bottom:6px}
-.step p{font-size:13.5px;color:var(--muted)}
-
-/* ---------- Testimonials ---------- */
-.testi{background:var(--bg-soft)}
-.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.t-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:.25s}
-.t-card:hover{box-shadow:var(--shadow-lg)}
-.t-stars{color:var(--accent-2);font-size:15px;letter-spacing:3px;margin-bottom:14px}
-.t-card p{font-size:14.5px;color:#4b525c;margin-bottom:18px}
-.t-who{display:flex;align-items:center;gap:12px}
-.t-av{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#3a4450,#232b35);color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px;flex:none}
-.t-who b{display:block;font-size:14.5px;color:var(--ink)}
-.t-who span{font-size:12.5px;color:var(--muted)}
-
-/* ---------- CTA ---------- */
-.cta-band{background:linear-gradient(110deg,var(--accent) 0%,var(--accent-2) 100%);color:#fff;border-radius:24px;padding:56px 54px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;overflow:hidden;position:relative;box-shadow:0 24px 50px rgba(224,138,35,.35)}
-.cta-band::before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:rgba(255,255,255,.12);top:-160px;left:-120px}
-.cta-band h2{font-size:clamp(23px,4.6vw,30px);font-weight:800;line-height:1.5;position:relative}
-.cta-band p{opacity:.92;font-size:15.5px;margin-top:6px;position:relative}
-.cta-band .cta{background:#fff;color:var(--ink);box-shadow:none;position:relative}
-.cta-band .cta:hover{background:var(--ink);color:#fff}
-
-/* ---------- Footer ---------- */
-footer{background:var(--ink);color:#aab1bb;padding:70px 0 0}
-.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:46px}
-.ft-grid h4{color:#fff;font-size:16.5px;margin-bottom:18px;font-weight:700}
-.ft-grid p{font-size:14px;line-height:2}
-.ft-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.ft-links li{margin-bottom:10px}
-.ft-links a{font-size:14px;position:relative;padding-right:16px;transition:.2s}
-.ft-links a::before{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:2px;background:var(--accent)}
-.ft-links a:hover{color:#fff;padding-right:20px}
-.ft-contact li{display:flex;gap:12px;margin-bottom:14px;font-size:14.5px}
-.ft-contact svg{width:20px;height:20px;flex:none;color:var(--accent);margin-top:4px}
-.ft-bottom{border-top:1px solid rgba(255,255,255,.1);padding:20px 0;display:flex;justify-content:space-between;gap:14px;font-size:13.5px;flex-wrap:wrap;color:#7f8793}
-.ft-bottom a{color:#b9c0ca}
-.ft-bottom a:hover{color:var(--accent)}
-
-/* ---------- Back to top ---------- */
-#to-top{position:fixed;bottom:26px;left:26px;width:48px;height:48px;border-radius:13px;background:var(--ink);color:#fff;display:grid;place-items:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(14px);transition:.3s;border:none;box-shadow:var(--shadow-lg);z-index:90}
-#to-top.show{opacity:1;visibility:visible;transform:none}
-#to-top:hover{background:var(--accent)}
-#to-top svg{width:22px;height:22px}
-
-/* reveal on scroll */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,.84,.44,1),transform .7s cubic-bezier(.16,.84,.44,1)}
-.reveal.in{opacity:1;transform:none}
-
-/* ================= Responsive ================= */
-
-/* --- Tablet / small laptop: mobile drawer + 2-col grids --- */
-@media(max-width:1024px){
-  .nav{display:none}
-  .burger{display:inline-flex}
-  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  .burger.open span:nth-child(2){opacity:0}
-  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .drawer{display:flex;position:fixed;top:0;right:0;height:100%;height:100dvh;width:min(340px,90vw);background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:0;transform:translateX(103%);transition:transform .34s cubic-bezier(.6,.05,.28,.91);box-shadow:-14px 0 46px rgba(0,0,0,.24);z-index:13000;overflow-y:auto}
-  .drawer.open{transform:none}
-  .drawer .nav-head{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--surface);position:sticky;top:0;z-index:2}
-  .m-logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink);font-size:17px}
-  .nav-close{width:40px;height:40px;border-radius:11px;background:var(--paper);border:1px solid var(--line);display:grid;place-items:center;cursor:pointer;color:var(--ink);flex:none;transition:.15s}
-  .nav-close:active{transform:scale(.9)}
-  .nav-close svg{width:20px;height:20px}
-  .drawer .nav-links{display:flex;flex-direction:column;gap:0;padding:12px 0}
-  .drawer .nav-links a{margin:0;padding:15px 24px;font-size:16px;font-weight:500;color:#303743;border-radius:0;border-bottom:1px solid var(--line)}
-  .drawer .nav-links a:hover{background:var(--accent-soft,#fdf3e7);color:var(--accent)}
-  .drawer .nav-links .cta{margin:22px 24px 8px;justify-content:center;border-radius:12px;box-shadow:none}
-  .drawer .nav-links .cta:hover{transform:none}
-  .drawer .nav-foot{margin-top:auto;padding:20px 24px 28px;border-top:1px solid var(--line);background:var(--paper);display:flex;flex-direction:column;gap:4px}
-  .drawer .nav-foot .nf-tel{font-size:19px;font-weight:800;color:var(--ink);display:inline-flex;align-items:center;gap:8px;direction:rtl}
-  .drawer .nav-foot .nf-tel svg{width:20px;height:20px;color:var(--accent)}
-  .drawer .nav-foot span{font-size:12.5px;color:var(--muted)}
-  .nav-backdrop{display:block;position:fixed;inset:0;background:rgba(13,15,19,.52);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:12000}
-  .nav-backdrop.show{opacity:1;visibility:visible}
-  body.no-scroll{overflow:hidden}
-  .topbar .container{justify-content:center}
-  .tb-right{display:none}
-  .header .container{height:72px}
-  .hero-in{grid-template-columns:1fr;gap:44px;padding:56px 0 84px}
-  .hero-visual{margin-top:8px}
-  .cat-grid,.why-grid,.step-grid,.t-grid{grid-template-columns:repeat(2,1fr)}
-  .stats-grid{grid-template-columns:repeat(2,1fr);gap:14px}
-  .stat{padding:26px 18px}
-  .ft-grid{grid-template-columns:1fr 1fr;gap:34px 30px}
-}
-
-/* --- Phone landscape: stacks to 1 col where it matters --- */
-@media(max-width:720px){
-  .sect{padding:58px 0}
-  .section-head{margin-bottom:34px}
-  .hero-in{padding:40px 0 56px}
-  .hero-points{grid-template-columns:1fr;gap:16px}
-  .hero-ctas{flex-direction:column;align-items:stretch}
-  .hero-ctas .cta,.hero-ctas .cta-ghost{justify-content:center;width:100%}
-  .cat-grid,.why-grid,.step-grid,.t-grid{grid-template-columns:1fr}
-  .why-grid{gap:14px}
-  .stats-grid{gap:12px}
-  .step-grid{gap:12px}
-  .step{text-align:right;display:flex;gap:16px;align-items:flex-start;padding:20px}
-  .step-num{margin:0;flex:none}
-  .step p{font-size:13.5px}
-  .price-grid{grid-template-columns:repeat(2,1fr);gap:12px}
-  .pc-body{padding:14px 16px}
-  .pc-media{height:118px}
-  .cta-band{padding:38px 24px;border-radius:18px;flex-direction:column;align-items:flex-start;gap:22px}
-  .fc-3{display:none}
-  .truck-card{padding:18px}
-}
-
-/* --- Small phone --- */
-@media(max-width:520px){
-  .container{padding:0 16px}
-  .price-grid{grid-template-columns:1fr}
-  .stats-grid{grid-template-columns:1fr 1fr}
-  .stat{padding:20px 12px}
-  .cat{padding:24px 18px}
-  .cat-ic{width:48px;height:48px}
-  .fc-1{top:-22px;right:-6px;padding:10px 14px;transform:scale(.92)}
-  .fc-1 b,.fc-1 span{font-size:11px}
-  .fc-1 .ic{width:36px;height:36px}
-  .fc-2{bottom:-18px;left:-8px;padding:10px 14px;transform:scale(.92)}
-  .fc-2 b,.fc-2 span{font-size:11px}
-  .fc-2 .ic{width:36px;height:36px}
-  .topbar{font-size:12px}
-  .topbar .container{gap:10px}
-  .cta-band{padding:34px 20px}
-  .ft-bottom{justify-content:center;text-align:center}
-  #to-top{bottom:18px;left:18px;width:44px;height:44px}
-  .hero-points{border-top:none;padding-top:8px}
-}
-</style>
+</script>
 </head>
-<body>
+<body id="top">
 
-<!-- Top bar -->
+<a class="skip-link" href="#main">پرش به محتوای اصلی</a>
+
+<!-- ============ SVG icon sprite (single source for all icons) ============ -->
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M4 7v13M4 7h9l3 3h4v10H4M4 17h-2v-3h2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4-3 6-7 8-4-2-7-4-7-8V7z"/></symbol>
+  <symbol id="i-package" viewBox="0 0 24 24"><path d="M4 7h16v13H4zM8 7V4h8v3"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 12h6l2-4 3 8 2-4h3"/></symbol>
+  <symbol id="i-house" viewBox="0 0 24 24"><path d="M4 17V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12M1 17h22M6 9h6v4H6z"/></symbol>
+  <symbol id="i-bucket" viewBox="0 0 24 24"><path d="M4 10h16v10H4zM6 10V7a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v3"/></symbol>
+  <symbol id="i-brick" viewBox="0 0 24 24"><path d="M4 4h6l4 4h6v12H4zM12 8l4 4"/></symbol>
+  <symbol id="i-rebar" viewBox="0 0 24 24"><path d="M14 3v5h5M6 3h12a1 1 0 0 1 1 1v7H5V4a1 1 0 0 1 1-1zM5 15l14 0M12 15v6"/></symbol>
+  <symbol id="i-stack" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5zM3 9l9 5 9-5M3 14l9 5 9-5"/></symbol>
+  <symbol id="i-waterproof" viewBox="0 0 24 24"><path d="M12 2l8 4v4c0 5-3 9-8 12-5-3-8-7-8-12V6z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4zM3 7v10l9 4 9-4V7M12 11v10"/></symbol>
+  <symbol id="i-roof" viewBox="0 0 24 24"><path d="M4 20h16M7 20V8l5-4 5 4v12"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 10c0-4-4-7-9-7S3 6 3 10s4 7 9 7a9 9 0 0 0 4-1l3 2-1-3c2-1 3-3 3-5z"/></symbol>
+  <symbol id="i-nav" viewBox="0 0 24 24"><rect x="2" y="6" width="13" height="13" rx="2"/><path d="M17 8h4v7h-4M15 11v3"/></symbol>
+  <symbol id="i-price" viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+  <symbol id="i-percent" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v8h-8"/></symbol>
+  <symbol id="i-check-shield" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 4-3 8-8 9-5-1-8-5-8-9V7zM9 12l2 2 4-4"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><rect x="2" y="8" width="20" height="12" rx="2"/><path d="M8 8V5h8v3"/></symbol>
+  <symbol id="i-sand" viewBox="0 0 24 24"><path d="M4 6h16v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 6V4h8v2M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-pumice" viewBox="0 0 24 24"><path d="M6 6a6 6 0 0 1 12 0c0 2-1 3-2 4h-8c-1-1-2-2-2-4zM8 10h8l-1 8h-6z"/></symbol>
+  <symbol id="i-block" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></symbol>
+  <symbol id="i-pipes" viewBox="0 0 24 24"><path d="M14 3v5h5M12 3h10v10H12zM12 12v3H8v3H12v3H3v-3h5v-3H3V3z"/></symbol>
+  <symbol id="i-clay" viewBox="0 0 24 24"><path d="M12 2l9 5-9 5-9-5zM3 11v5l9 5 9-5v-5"/></symbol>
+  <symbol id="i-isogam" viewBox="0 0 24 24"><path d="M4 21V8l8-5 8 5v13M8 21v-6h8v6M4 8h16"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+</svg>
+
+<!-- ============ Top bar ============ -->
 <div class="topbar">
   <div class="container">
     <div class="tb-row">
       <span class="skew">پخش سراسری مواد و مصالح</span>
       <div class="tb-right">سفارش آنلاین، تحویل در محل</div>
     </div>
-    <a href="tel:02177981500">۰۲۱-۷۷۹۸۱۵۰۰</a>
+    <a href="tel:02177981500" dir="ltr">۰۲۱-۷۷۹۸۱۵۰۰</a>
   </div>
 </div>
 
-<!-- Header -->
+<!-- ============ Header ============ -->
 <header class="header" id="header">
   <div class="container">
-    <a href="#" class="logo">
-      <div class="logo-mark">ب</div>
-      <div><b>بتن‌یار</b><span>مصالح ساختمانی</span></div>
+    <a href="#top" class="logo" aria-label="بتن‌یار — صفحه اصلی">
+      <span class="logo-mark">ب</span>
+      <span class="logo-text"><b>بتن‌یار</b><span>مصالح ساختمانی</span></span>
     </a>
-    <nav class="nav" id="nav">
+    <nav class="nav" aria-label="فهرست اصلی">
       <div class="nav-links">
         <a href="#products">محصولات</a>
         <a href="#why">چرا بتن‌یار؟</a>
         <a href="#price">قیمت روز</a>
         <a href="#steps">مراحل سفارش</a>
         <a href="#contact">تماس</a>
-        <a href="#contact" class="cta" style="justify-content:center">ثبت سفارش</a>
+        <a href="#contact" class="cta">ثبت سفارش</a>
       </div>
     </nav>
-    <button class="burger" id="burger" aria-label="باز کردن فهرست">
+    <button class="burger" id="burger" aria-label="باز کردن فهرست" aria-expanded="false" aria-controls="drawer">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
-<div class="drawer" id="drawer">
+<!-- ============ Mobile drawer ============ -->
+<div class="drawer" id="drawer" aria-label="فهرست">
   <div class="nav-head">
-    <div class="m-logo"><span class="logo-mark" style="width:36px;height:36px;font-size:16px;border-radius:10px">ب</span>بتن‌یار</div>
+    <div class="m-logo"><span class="logo-mark">ب</span>بتن‌یار</div>
     <button class="nav-close" id="navClose" aria-label="بستن فهرست">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      <svg class="ic ic--x"><use href="#i-x"/></svg>
     </button>
   </div>
   <div class="nav-links">
@@ -378,21 +129,23 @@ footer{background:var(--ink);color:#aab1bb;padding:70px 0 0}
     <a href="#price">قیمت روز</a>
     <a href="#steps">مراحل سفارش</a>
     <a href="#contact">تماس</a>
-    <a href="#contact" class="cta" style="justify-content:center">ثبت سفارش</a>
+    <a href="#contact" class="cta">ثبت سفارش</a>
   </div>
   <div class="nav-foot">
-    <a href="tel:02177981500" class="nf-tel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>۰۲۱-۷۷۹۸۱۵۰۰</a>
+    <a href="tel:02177981500" class="nf-tel" dir="ltr"><svg class="ic"><use href="#i-phone"/></svg>۰۲۱-۷۷۹۸۱۵۰۰</a>
     <span>پاسخگویی همه‌روزه ۸ صبح تا ۸ شب</span>
   </div>
 </div>
-<div class="nav-backdrop" id="navBackdrop"></div>
+<div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
 
-<!-- Hero -->
+<main id="main">
+
+<!-- ============ Hero ============ -->
 <section class="hero">
   <div class="container">
     <div class="hero-in">
       <div>
-        <span class="badge" style="background:rgba(240,161,64,.16);color:#f4a140">مرجع تخصصی پخش مصالح از ۱۳۸۷</span>
+        <span class="badge badge--dark">مرجع تخصصی پخش مصالح از ۱۳۸۷</span>
         <h1>هر چی نیاز دارید،<br><span class="grad">با خیال راحت بسازید</span></h1>
         <p class="lead">سیمان، شن و ماسه، آجر، بلوک، میلگرد و صدها قلم مصالح ساختمانی با قیمت‌ِ روز بازار، فاکتور رسمی و ارسال‌ِ امروزی به تهران و کرج.</p>
         <div class="hero-ctas">
@@ -400,26 +153,23 @@ footer{background:var(--ink);color:#aab1bb;padding:70px 0 0}
           <a href="#contact" class="cta-ghost">درخواست استعلام</a>
         </div>
         <div class="hero-points">
-          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><div><b>قیمت‌ِ بروز هر روز</b><span>لیست روزانه از بازار</span></div></div>
-          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M3 12l9 8 9-8"/></svg><div><b>ارسال سریع</b><span>معمولا در کمتر از ۲۴ ساعت</span></div></div>
-          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7v13M4 7h9l3 3h4v10H4M4 17h-2v-3h2"/></svg><div><b>تضمین کیفیت</b><span>بررسی و کنترل بار</span></div></div>
+          <div><svg class="ic"><use href="#i-check"/></svg><div><b>قیمت‌ِ بروز هر روز</b><span>لیست روزانه از بازار</span></div></div>
+          <div><svg class="ic"><use href="#i-truck"/></svg><div><b>ارسال سریع</b><span>معمولا در کمتر از ۲۴ ساعت</span></div></div>
+          <div><svg class="ic"><use href="#i-shield"/></svg><div><b>تضمین کیفیت</b><span>بررسی و کنترل بار</span></div></div>
         </div>
       </div>
       <div class="hero-visual">
         <div class="truck-card">
-          <div class="tc-top"><span>در حال ارسال بار</span><b><span style="color:var(--accent-2)">●</span> بتن‌یار اکسپرس</b></div>
+          <div class="tc-top"><span>در حال ارسال بار</span><b><span class="live-dot">●</span> بتن‌یار اکسپرس</b></div>
           <div class="truck-art">
-            <svg viewBox="0 0 320 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- concrete body -->
+            <svg viewBox="0 0 320 140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <rect x="14" y="40" width="150" height="58" rx="8" fill="#E8A13C"/>
               <path d="M14 58 L164 58 L164 98 L14 98 Z" fill="#C97A20" opacity=".55"/>
               <rect x="34" y="30" width="120" height="22" rx="5" fill="#F7B955"/>
               <text x="60" y="78" font-family="Vazirmatn" font-size="15" fill="#fff" font-weight="700">بتن‌یار</text>
-              <!-- cab -->
               <path d="M196 54 L248 54 Q270 54 270 72 L270 98 L164 98 L164 58 Z" fill="#20262F"/>
               <rect x="196" y="64" width="56" height="26" rx="4" fill="#a8b2bd" opacity=".9"/>
               <rect x="252" y="66" width="16" height="26" rx="4" fill="#a8b2bd" opacity=".6"/>
-              <!-- wheels -->
               <circle cx="76" cy="104" r="17" fill="#14181f"/>
               <circle cx="76" cy="104" r="7" fill="#8b95a1"/>
               <circle cx="238" cy="104" r="17" fill="#14181f"/>
@@ -434,32 +184,32 @@ footer{background:var(--ink);color:#aab1bb;padding:70px 0 0}
             <div><b>۹۸٪</b><span>تحویل به‌موقع</span></div>
           </div>
         </div>
-        <div class="float-card fc-1"><div class="fc ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 4v5c0 4-3 6-7 8-4-2-7-4-7-8V7z"/></svg></div><div><b>مشاوره فنی</b><span>رایگان برای مهندسین</span></div></div>
-        <div class="float-card fc-2"><div class="fc ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16v13H4zM8 7V4h8v3"/></svg></div><div><b>فاکتور رسمی</b><span>با کد اقتصادی</span></div></div>
-        <div class="float-card fc-3"><div class="fc ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h6l2-4 3 8 2-4h3"/></svg></div><div><b>ارسال رایگان</b><span>خرید بالای ۵ میلیون</span></div></div>
+        <div class="float-card fc-1"><div class="ic ic-amber"><svg class="ic"><use href="#i-shield"/></svg></div><div><b>مشاوره فنی</b><span>رایگان برای مهندسین</span></div></div>
+        <div class="float-card fc-2"><div class="ic ic-blue"><svg class="ic"><use href="#i-package"/></svg></div><div><b>فاکتور رسمی</b><span>با کد اقتصادی</span></div></div>
+        <div class="float-card fc-3"><div class="ic ic-green"><svg class="ic"><use href="#i-chart"/></svg></div><div><b>ارسال رایگان</b><span>خرید بالای ۵ میلیون</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Marquee -->
-<div class="marquee">
-  <div class="marquee-track">
+<!-- ============ Marquee ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
     <span>سیمان تیپ ۱</span><span>سیمان پوزولانی</span><span>شن و ماسه</span><span>آجر نما</span><span>بلوک سیمانی</span><span>سفال پوکه‌ای</span><span>میلگرد A3</span><span>گچ ساختمانی</span><span>پوکه معدنی</span><span>عایق رطوبتی</span><span>چسب پودری</span><span>بتن آماده</span><span>ایزوگام</span><span>سیمان تیپ ۱</span><span>سیمان پوزولانی</span><span>شن و ماسه</span><span>آجر نسوز</span><span>بلوک سیمانی</span><span>سفال پوکه‌ای</span><span>میلگرد A3</span>
   </div>
 </div>
 
-<!-- Stats -->
+<!-- ============ Stats ============ -->
 <section class="stats">
   <div class="container stats-grid">
-    <div class="stat reveal"><b><span data-count="16">0</span>+</b><span>سال تجربه در توزیع</span></div>
+    <div class="stat reveal"><b><span data-count="16">0</span><i class="unit">+</i></b><span>سال تجربه در توزیع</span></div>
     <div class="stat reveal"><b><span data-count="4200">0</span></b><span>مشتری وفادار پروژه</span></div>
-    <div class="stat reveal"><b><span data-count="200">0</span>+</b><span>قلم کالای فعال</span></div>
-    <div class="stat reveal"><b><span data-count="400">0</span>+</b><span>پیمانکار و سازنده راضی</span></div>
+    <div class="stat reveal"><b><span data-count="200">0</span><i class="unit">+</i></b><span>قلم کالای فعال</span></div>
+    <div class="stat reveal"><b><span data-count="400">0</span><i class="unit">+</i></b><span>پیمانکار و سازنده راضی</span></div>
   </div>
 </section>
 
-<!-- products categories -->
+<!-- ============ Products / categories ============ -->
 <section class="products sect" id="products">
   <div class="container">
     <div class="section-head">
@@ -468,38 +218,38 @@ footer{background:var(--ink);color:#aab1bb;padding:70px 0 0}
       <p>از شالوده تا نما، بیشتر مصالح مورد نیاز پروژه‌تان را یکجا و با قیمت پخش تهیه کنید.</p>
     </div>
     <div class="cat-grid">
-      <div class="cat reveal"><div class="cat-ic ic-amber"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12M1 17h22M6 9h6v4H6z"/></svg></div><h3>سیمان و افزودنی</h3><p>تیپ ۱، تیپ ۲، پلیکاربوکسیلات، پوزولانی</p><a href="#price">قیمت امروز ←</a></div>
-      <div class="cat reveal"><div class="cat-ic ic-blue2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h16v10H4zM6 10V7a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v3"/></svg></div><h3>شن و ماسه</h3><p>ماسه شسته، ماسه بادی، شن نخودی و بادامی</p><a href="#price">قیمت روز برحسب تن ←</a></div>
-      <div class="cat reveal"><div class="cat-ic ic-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h6l4 4h6v12H4zM12 8l4 4"/></svg></div><h3>بلوک و آجر</h3><p>بلوک سیمانی، لیکا، آجر فشاری، قزاقی و نسوز</p><a href="#price">تحویل در محل ←</a></div>
-      <div class="cat reveal"><div class="cat-ic ic-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v5h5M6 3h12a1 1 0 0 1 1 1v7H5V4a1 1 0 0 1 1-1zM5 15l14 0M12 15v6"/></svg></div><h3>میلگرد و فولاد</h3><p>میلگرد A2 و A3، فولاد صنعتی و ساده</p><a href="#price">استعلام روزانه ←</a></div>
-      <div class="cat reveal"><div class="cat-ic ic-green2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-5 9 5-9 5zM3 9l9 5 9-5M3 14l9 5 9-5"/></svg></div><h3>گچ و خاک</h3><p>گچ ساختمانی، گچ کاری، خاک و شن باطله</p><a href="#price">قیمت کیسه‌ای ←</a></div>
-      <div class="cat reveal"><div class="cat-ic ic-slate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v4c0 5-3 9-8 12-5-3-8-7-8-12V6z"/></svg></div><h3>عایق و ایزوگام</h3><p>ایزوگام، عایق رطوبتی، نایلون، چسب و دیتون</p><a href="#price">قیمت بر متراژ ←</a></div>
-      <div class="cat reveal"><div class="cat-ic ic-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9-4 9 4-9 4zM3 7v10l9 4 9-4V7M12 11v10"/></svg></div><h3>چسب و ملاط</h3><p>چسب کاشی و سرامیک، بندکشی، بلوک چسب</p><a href="#price">ارسال به سراسر کرج ←</a></div>
-      <div class="cat reveal"><div class="cat-ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16M7 20V8l5-4 5 4v12"/></svg></div><h3>سفال و پوکه</h3><p>سفال تیغه، سفال سقفی، پوکه معدنی</p><a href="#price">استعلام فوری ←</a></div>
+      <div class="cat reveal"><div class="cat-ic ic-amber"><svg class="ic"><use href="#i-house"/></svg></div><h3>سیمان و افزودنی</h3><p>تیپ ۱، تیپ ۲، پلی‌کاربوکسیلات، پوزولانی</p><a href="#price">قیمت امروز <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+      <div class="cat reveal"><div class="cat-ic ic-blue"><svg class="ic"><use href="#i-bucket"/></svg></div><h3>شن و ماسه</h3><p>ماسه شسته، ماسه بادی، شن نخودی و بادامی</p><a href="#price">قیمت روز برحسب تن <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+      <div class="cat reveal"><div class="cat-ic ic-rose"><svg class="ic"><use href="#i-brick"/></svg></div><h3>بلوک و آجر</h3><p>بلوک سیمانی، لیکا، آجر فشاری، قزاقی و نسوز</p><a href="#price">تحویل در محل <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+      <div class="cat reveal"><div class="cat-ic ic-slate"><svg class="ic"><use href="#i-rebar"/></svg></div><h3>میلگرد و فولاد</h3><p>میلگرد A2 و A3، فولاد صنعتی و ساده</p><a href="#price">استعلام روزانه <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+      <div class="cat reveal"><div class="cat-ic ic-green"><svg class="ic"><use href="#i-stack"/></svg></div><h3>گچ و خاک</h3><p>گچ ساختمانی، گچ کاری، خاک و شن باطله</p><a href="#price">قیمت کیسه‌ای <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+      <div class="cat reveal"><div class="cat-ic ic-teal"><svg class="ic"><use href="#i-waterproof"/></svg></div><h3>عایق و ایزوگام</h3><p>ایزوگام، عایق رطوبتی، نایلون، چسب و دیتون</p><a href="#price">قیمت بر متراژ <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+      <div class="cat reveal"><div class="cat-ic ic-violet"><svg class="ic"><use href="#i-layers"/></svg></div><h3>چسب و ملاط</h3><p>چسب کاشی و سرامیک، بندکشی، بلوک چسب</p><a href="#price">ارسال به سراسر کرج <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+      <div class="cat reveal"><div class="cat-ic ic-sand"><svg class="ic"><use href="#i-roof"/></svg></div><h3>سفال و پوکه</h3><p>سفال تیغه، سفال سقفی، پوکه معدنی</p><a href="#price">استعلام فوری <svg class="ic"><use href="#i-arrow"/></svg></a></div>
     </div>
   </div>
 </section>
 
-<!-- Why us -->
+<!-- ============ Why us ============ -->
 <section class="why sect" id="why">
   <div class="container">
     <div class="section-head reveal">
-      <span class="badge" style="background:rgba(226,161,64,.16);color:#f6a140">چرا بتن‌یار؟</span>
+      <span class="badge badge--dark">چرا بتن‌یار؟</span>
       <h2>تفاوت ما، در دقت و صداقت است</h2>
       <p>ما فقط فروخنده نیستیم؛ تیم اجرایی و فنی پشت شما هستیم تا بار درست، به‌موقع و با قیمت منصفانه به پروژه برسد.</p>
     </div>
     <div class="why-grid">
-<div class="why-card reveal"><span class="num">۰۱</span><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 4-3 8-8 9-5-1-8-5-8-9V7z"/></svg>قیمت شفاف روز</h3><p>لیست قیمت روزانهٔ ما ساده و بروز است؛ بدون غافلگیریِ آخرِ ماه و با امکان استعلام رسمی برای پیمانکارها.</p></div>
-      <div class="why-card reveal"><span class="num">۰۲</span><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0-4-4-7-9-7S3 6 3 10s4 7 9 7a9 9 0 0 0 4-1l3 2-1-3c2-1 3-3 3-5z"/></svg>مشاوره فنی</h3><p>پیش از خرید، راهنمای انتخاب مصالح بر اساس نوع سازه، اقلیم و بودجه پروژه‌تان را به صورت رایگان دریافت کنید.</p></div>
-      <div class="why-card reveal"><span class="num">۰۳</span><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="13" height="13" rx="2"/><path d="M17 8h4v7h-4M15 11v3"/></svg>ناوگان حمل اختصاصی</h3><p>بار شما با ۳۲ کامیون و خاورِ خودمان، طبق برنامه و پشت‌سرهم به مقصد تحویل می‌شود.</p></div>
-      <div class="why-card reveal"><span class="num">۰۴</span><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>پرداخت و اسناد کامل</h3><p>فاکتور رسمی با کد اقتصادی؛ امکان پرداخت آنلاین، کارت‌به‌کارت و نسیه برای مشتریان دائمی پروژه.</p></div>
-      <div class="why-card reveal"><span class="num">۰۵</span><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v8h-8"/></svg>قیمت پخش و توافقی</h3><p>برای پیمانکار، سازنده و مغازه‌دار؛ هرچه حجم بالاتر باشد، قیمت پایین‌تر و شرایط اعتباری بهتر.</p></div>
-      <div class="why-card reveal"><span class="num">۰۶</span><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 4-3 8-8 9-5-1-8-5-8-9V7zM9 12l2 2 4-4"/></svg>پشتیبانی و رهگیری بار</h3><p>پشتیبانی ۷ روز هفته؛ سفارش شما از ثبت تا تسویه، توسط کارشناس مشخصی پیگیری و اطلاع‌رسانی می‌شود.</p></div>
+      <div class="why-card reveal"><span class="num">۰۱</span><h3><svg class="ic"><use href="#i-shield"/></svg>قیمت شفاف روز</h3><p>لیست قیمت روزانهٔ ما ساده و بروز است؛ بدون غافلگیریِ آخرِ ماه و با امکان استعلام رسمی برای پیمانکارها.</p></div>
+      <div class="why-card reveal"><span class="num">۰۲</span><h3><svg class="ic"><use href="#i-chat"/></svg>مشاوره فنی</h3><p>پیش از خرید، راهنمای انتخاب مصالح بر اساس نوع سازه، اقلیم و بودجه پروژه‌تان را به صورت رایگان دریافت کنید.</p></div>
+      <div class="why-card reveal"><span class="num">۰۳</span><h3><svg class="ic"><use href="#i-nav"/></svg>ناوگان حمل اختصاصی</h3><p>بار شما با ۳۲ کامیون و خاورِ خودمان، طبق برنامه و پشت‌سرهم به مقصد تحویل می‌شود.</p></div>
+      <div class="why-card reveal"><span class="num">۰۴</span><h3><svg class="ic"><use href="#i-price"/></svg>پرداخت و اسناد کامل</h3><p>فاکتور رسمی با کد اقتصادی؛ امکان پرداخت آنلاین، کارت‌به‌کارت و نسیه برای مشتریان دائمی پروژه.</p></div>
+      <div class="why-card reveal"><span class="num">۰۵</span><h3><svg class="ic"><use href="#i-percent"/></svg>قیمت پخش و توافقی</h3><p>برای پیمانکار، سازنده و مغازه‌دار؛ هرچه حجم بالاتر باشد، قیمت پایین‌تر و شرایط اعتباری بهتر.</p></div>
+      <div class="why-card reveal"><span class="num">۰۶</span><h3><svg class="ic"><use href="#i-check-shield"/></svg>پشتیبانی و رهگیری بار</h3><p>پشتیبانی ۷ روز هفته؛ سفارش شما از ثبت تا تسویه، توسط کارشناس مشخصی پیگیری و اطلاع‌رسانی می‌شود.</p></div>
     </div>
   </div>
 </section>
 
-<!-- prices -->
+<!-- ============ Prices / product cards ============ -->
 <section class="prices sect" id="price">
   <div class="container">
     <div class="section-head reveal">
@@ -508,19 +258,75 @@ footer{background:var(--ink);color:#aab1bb;padding:70px 0 0}
       <p>قیمت‌های نمادین هر هفته به‌روز می‌شوند؛ برای قیمت دقیقِ امروز کالاها از تیم فروش استعلام بگیرید.</p>
     </div>
     <div class="price-grid">
-      <div class="price-card reveal"><div class="pc-media"><span class="pc-tag">پرفروش</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="8" width="20" height="12" rx="2"/><path d="M8 8V5h8v3"/></svg></div><div class="pc-body"><h3>سیمان تیپ ۱ (پاکت ۵۰‌کیلویی)</h3><div class="pc-row"><span class="pc-price">۸۷,۵۰۰ <small>تومان</small></span><span class="pc-note">بازار</span></div></div></div>
-      <div class="price-card reveal"><div class="pc-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 6V4h8v2M9 12l2 2 4-4"/></svg></div><div class="pc-body"><h3>شن شسته (درجه یک)</h3><div class="pc-row"><span class="pc-price">۳۷۵,۰۰۰ <small>تومان/تن</small></span><span class="pc-note">تحویل کرج</span></div></div></div>
-      <div class="price-card reveal"><div class="pc-media"><span class="pc-tag">در حال عرضه</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6a6 6 0 0 1 12 0c0 2-1 3-2 4h-8c-1-1-2-2-2-4zM8 10h8l-1 8h-6z"/></svg></div><div class="pc-body"><h3>پوکه معدنی</h3><div class="pc-row"><span class="pc-price">۶۲۰,۰۰۰ <small>تومان/تن</small></span><span class="pc-note">استعلام لحظهای</span></div></div></div>
-      <div class="price-card reveal"><div class="pc-media"><span class="pc-tag">پرفروش</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></div><div class="pc-body"><h3>بلوک سیمانی ۲۰٫۲۰٫۴۰</h3><div class="pc-row"><span class="pc-price">۲۶,۵۰۰ <small>تومان</small></span><span class="pc-note">عدد</span></div></div></div>
-      <div class="price-card reveal"><div class="pc-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3v5h5M12 3h10v10H12zM12 12v3H8v3H12v3H3v-3h5v-3H3V3z"/></svg></div><div class="pc-body"><h3>میلگرد A3 (سایز ۱۴)</h3><div class="pc-row"><span class="pc-price">۳۲,۲۰۰ <small>تومان/کیلو</small></span><span class="pc-note">+ شاخه‌بری</span></div></div></div>
-      <div class="price-card reveal"><div class="pc-media"><span class="pc-tag">اقتصادی</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h6V6H4zM10 6h10v8h-6v4h4v4h2"/><path d="M12 14h4"/></svg></div><div class="pc-body"><h3>سیمان سفید</h3><div class="pc-row"><span class="pc-price">۱,۰۲۰,۰۰۰ <small>تومان/تن</small></span><span class="pc-note">کیسه ۳۰کیلو</span></div></div></div>
-      <div class="price-card reveal"><div class="pc-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 5-9 5-9-5zM3 11v5l9 5 9-5v-5"/></svg></div><div class="pc-body"><h3>خاک (رس) ساختمانی</h3><div class="pc-row"><span class="pc-price">۸۹۰,۰۰۰ <small>تومان/تن</small></span><span class="pc-note">بسته‌بندی کیسه</span></div></div></div>
-      <div class="price-card reveal"><div class="pc-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V8l8-5 8 5v13M8 21v-6h8v6M4 8h16"/></svg></div><div class="pc-body"><h3>ایزوگام پشت‌ناری طلایی</h3><div class="pc-row"><span class="pc-price">۵۲۰,۰۰۰ <small>تومان/متر</small></span><span class="pc-note">با نصب</span></div></div></div>
+      <article class="price-card reveal">
+        <div class="pc-media"><span class="pc-tag">پرفروش</span><svg class="pc-icon"><use href="#i-bag"/></svg></div>
+        <div class="pc-body">
+          <h3 class="pc-title">سیمان تیپ ۱ (پاکت ۵۰‌کیلویی)</h3>
+          <div class="pc-foot"><span class="pc-price">۸۷,۵۰۰ <small>تومان</small></span><span class="pc-unit">بازار</span></div>
+          <a class="pc-link" href="#contact">استعلام قیمت <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="price-card reveal">
+        <div class="pc-media"><svg class="pc-icon"><use href="#i-sand"/></svg></div>
+        <div class="pc-body">
+          <h3 class="pc-title">شن شسته (درجه یک)</h3>
+          <div class="pc-foot"><span class="pc-price">۳۷۵,۰۰۰ <small>تومان/تن</small></span><span class="pc-unit">تحویل کرج</span></div>
+          <a class="pc-link" href="#contact">استعلام قیمت <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="price-card reveal">
+        <div class="pc-media"><span class="pc-tag pc-tag--stock">در حال عرضه</span><svg class="pc-icon"><use href="#i-pumice"/></svg></div>
+        <div class="pc-body">
+          <h3 class="pc-title">پوکه معدنی</h3>
+          <div class="pc-foot"><span class="pc-price">۶۲۰,۰۰۰ <small>تومان/تن</small></span><span class="pc-unit">استعلام لحظه‌ای</span></div>
+          <a class="pc-link" href="#contact">استعلام قیمت <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="price-card reveal">
+        <div class="pc-media"><span class="pc-tag">پرفروش</span><svg class="pc-icon"><use href="#i-block"/></svg></div>
+        <div class="pc-body">
+          <h3 class="pc-title">بلوک سیمانی ۲۰٫۲۰٫۴۰</h3>
+          <div class="pc-foot"><span class="pc-price">۲۶,۵۰۰ <small>تومان</small></span><span class="pc-unit">عدد</span></div>
+          <a class="pc-link" href="#contact">استعلام قیمت <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="price-card reveal">
+        <div class="pc-media"><svg class="pc-icon"><use href="#i-rebar"/></svg></div>
+        <div class="pc-body">
+          <h3 class="pc-title">میلگرد A3 (سایز ۱۴)</h3>
+          <div class="pc-foot"><span class="pc-price">۳۲,۲۰۰ <small>تومان/کیلو</small></span><span class="pc-unit">+ شاخه‌بری</span></div>
+          <a class="pc-link" href="#contact">استعلام قیمت <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="price-card reveal">
+        <div class="pc-media"><span class="pc-tag pc-tag--sale">اقتصادی</span><svg class="pc-icon"><use href="#i-pipes"/></svg></div>
+        <div class="pc-body">
+          <h3 class="pc-title">سیمان سفید</h3>
+          <div class="pc-foot"><span class="pc-price">۱,۰۲۰,۰۰۰ <small>تومان/تن</small></span><span class="pc-unit">کیسه ۳۰کیلو</span></div>
+          <a class="pc-link" href="#contact">استعلام قیمت <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="price-card reveal">
+        <div class="pc-media"><svg class="pc-icon"><use href="#i-clay"/></svg></div>
+        <div class="pc-body">
+          <h3 class="pc-title">خاک (رس) ساختمانی</h3>
+          <div class="pc-foot"><span class="pc-price">۸۹۰,۰۰۰ <small>تومان/تن</small></span><span class="pc-unit">بسته‌بندی کیسه</span></div>
+          <a class="pc-link" href="#contact">استعلام قیمت <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="price-card reveal">
+        <div class="pc-media"><svg class="pc-icon"><use href="#i-isogam"/></svg></div>
+        <div class="pc-body">
+          <h3 class="pc-title">ایزوگام پشت‌ناری طلایی</h3>
+          <div class="pc-foot"><span class="pc-price">۵۲۰,۰۰۰ <small>تومان/متر</small></span><span class="pc-unit">با نصب</span></div>
+          <a class="pc-link" href="#contact">استعلام قیمت <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- Steps -->
+<!-- ============ Steps ============ -->
 <section class="steps sect" id="steps">
   <div class="container">
     <div class="section-head reveal">
@@ -529,15 +335,15 @@ footer{background:var(--ink);color:#aab1bb;padding:70px 0 0}
       <p>از استعلام تا تحویل، همه‌چیز مشخص و قابل رهگیری است.</p>
     </div>
     <div class="step-grid">
-      <div class="step reveal"><div class="step-num">۱</div><h3>مشاوره و استعلام</h3><p>فهرست کالا و متراژ را از سایت یا تلفن ثبت کنید؛ مشاور فنی سریع پاسخ می‌دهد.</p></div>
-      <div class="step reveal"><div class="step-num">۲</div><h3>پیش‌فاکتور رسمی</h3><p>قیمت تاییدشده روز برای شما ارسال می‌شود.</p></div>
-      <div class="step reveal"><div class="step-num">۳</div><h3>پرداخت و هماهنگی</h3><p>به‌ صورت آنلاین، کارت به کارت یا نسیه برای مشتریان دائمی.</p></div>
-      <div class="step reveal"><div class="step-num">۴</div><h3>ارسال و تحویل</h3><p>بار در محل پروژه تخلیه و رسید نهایی ثبت می‌شود.</p></div>
+      <div class="step reveal"><div class="step-num">۱</div><div><h3>مشاوره و استعلام</h3><p>فهرست کالا و متراژ را از سایت یا تلفن ثبت کنید؛ مشاور فنی سریع پاسخ می‌دهد.</p></div></div>
+      <div class="step reveal"><div class="step-num">۲</div><div><h3>پیش‌فاکتور رسمی</h3><p>قیمت تاییدشده روز برای شما ارسال می‌شود.</p></div></div>
+      <div class="step reveal"><div class="step-num">۳</div><div><h3>پرداخت و هماهنگی</h3><p>به صورت آنلاین، کارت به کارت یا نسیه برای مشتریان دائمی.</p></div></div>
+      <div class="step reveal"><div class="step-num">۴</div><div><h3>ارسال و تحویل</h3><p>بار در محل پروژه تخلیه و رسید نهایی ثبت می‌شود.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- testimonials -->
+<!-- ============ Testimonials ============ -->
 <section class="testi sect" id="testi">
   <div class="container">
     <div class="section-head reveal">
@@ -547,33 +353,35 @@ footer{background:var(--ink);color:#aab1bb;padding:70px 0 0}
     </div>
     <div class="t-grid">
       <div class="t-card reveal"><div class="t-stars">★★★★★</div><p>برای یک پروژه ۱۲ واحدی، تمام مصالح را از بتن‌یار گرفتیم. برنامه‌ریزی تحویل عالی بود و هر بار بار درست و به‌موقع به محل پروژه رسید.</p><div class="t-who"><div class="t-av">ع</div><div><b>علی رضایی</b><span>مدیر پروژه ساختمانی — شهرک غرب</span></div></div></div>
-      <div class="t-card reveal"><div class="t-stars">★★★★★</div><p>قیمت‌هایشان همیشه واضح بود و قبلِ نهایی‌کردن خرید هم مشاوره فنی رایگان گرفتیم. چند سال است که برای سیمان و میلگرد، مشتری ثابتشان هستیم.</p><div class="t-who"><div class="t-av">م</div><div><b>مریم انصاری</b><span>معمار و پیمانکار داخلی</span></div></div></div>
-      <div class="t-card reveal"><div class="t-stars">★★★★★</div><p>به‌عنوان یک فروشنده خرد، ثبات قیمت و پاسخگوی آنلاین را خیلی دوست دارم. همیشه بار را همان روز یا فردا صبح تحویل می‌گیرم.</p><div class="t-who"><div class="t-av">ح</div><div><b>حسین مرادی</b><span>فروشنده مصالح محله تهرانپارس</span></div></div></div>
+      <div class="t-card reveal"><div class="t-stars">★★★★★</div><p>قیمت‌هایشان همیشه واضح بود و قبلِ نهایی‌کردن خرید هم مشاوره فنی رایگان گرفتیم. چند سال است که برای سیمان و میلگرد، مشتری ثابت‌شان هستیم.</p><div class="t-who"><div class="t-av">م</div><div><b>مریم انصاری</b><span>معمار و پیمانکار داخلی</span></div></div></div>
+      <div class="t-card reveal"><div class="t-stars">★★★★★</div><p>به‌عنوان یک فروشنده خرد، ثبات قیمت و پاسخ‌گویی آنلاین را خیلی دوست دارم. همیشه بار را همان روز یا فردا صبح تحویل می‌گیرم.</p><div class="t-who"><div class="t-av">ح</div><div><b>حسین مرادی</b><span>فروشنده مصالح محله تهرانپارس</span></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- CTA band -->
-<section class="sect" id="contact" style="background:var(--paper)">
+<!-- ============ CTA band ============ -->
+<section class="sect paper" id="contact">
   <div class="container">
     <div class="cta-band reveal">
       <div>
         <h2>آماده ارسال بار همین امروز هستیم</h2>
         <p>همین حالا از قیمت روز استعلام بگیرید؛ استعلام رایگان و بدون هیچ تعهدی برای شما.</p>
       </div>
-      <a href="tel:02177881500" class="cta">۰۲۱-۷۷۹۸۱۵۰۰</a>
+      <a href="tel:02177981500" class="cta" dir="ltr">۰۲۱-۷۷۹۸۱۵۰۰</a>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
+</main>
+
+<!-- ============ Footer ============ -->
 <footer>
   <div class="container">
     <div class="ft-grid">
       <div>
         <div class="ft-logo">
-          <div class="logo-mark">ب</div>
-          <div style="color:#fff"><b style="font-size:22px">بتن‌یار</b><br><span style="font-size:12.5px;color:#8f97a3">پخش مصالح ساختمانی</span></div>
+          <span class="logo-mark">ب</span>
+          <div class="ft-logo-text"><b>بتن‌یار</b><span>پخش مصالح ساختمانی</span></div>
         </div>
         <p>بتن‌یار از سال ۱۳۸۷ به‌عنوان توزیع‌کننده تخصصی مصالح ساختمانی در تهران و کرج فعالیت می‌کند. انبار مرکزی ما در ناحیه صنعتی کرج واقع است و سفارش‌ها از آنجا برای کل استان ارسال می‌شوند.</p>
       </div>
@@ -599,66 +407,22 @@ footer{background:var(--ink);color:#aab1bb;padding:70px 0 0}
       <div>
         <h4>تماس با ما</h4>
         <ul class="ft-contact">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg><span dir="ltr">۰۲۱-۷۷۹۸۱۵۰۰</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span>sales@betonyar.ir</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>نجف‌آباد کرج، بلوار یاس، انبار ۸</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>هر روز ۸ صبح تا ۸ شب</span></li>
+          <li><svg class="ic"><use href="#i-phone"/></svg><span dir="ltr">۰۲۱-۷۷۹۸۱۵۰۰</span></li>
+          <li><svg class="ic"><use href="#i-mail"/></svg><span>sales@betonyar.ir</span></li>
+          <li><svg class="ic"><use href="#i-pin"/></svg><span>نجف‌آباد کرج، بلوار یاس، انبار ۸</span></li>
+          <li><svg class="ic"><use href="#i-clock"/></svg><span>هر روز ۸ صبح تا ۸ شب</span></li>
         </ul>
       </div>
     </div>
     <div class="ft-bottom">
       <span>© ۱۴۰۴ بتن‌یار. تمامی حقوق محفوظ است.</span>
-      <span>طراحی و توسعه با حمایت <a href="#" target="_blank">Code-Watch</a></span>
+      <span>طراحی و توسعه با حمایت <a href="#" target="_blank" rel="noopener noreferrer">Code-Watch</a></span>
     </div>
   </div>
 </footer>
 
-<button id="to-top" aria-label="بازگشت به بالا"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<!-- ============ Back to top ============ -->
+<button id="toTop" aria-label="بازگشت به بالا"><svg class="ic"><use href="#i-up"/></svg></button>
 
-<script>
-/* header shrink */
-var header=document.getElementById('header'),toTop=document.getElementById('to-top');
-window.addEventListener('scroll',function(){
-  var y=window.scrollY;
-  if(y>10)header.classList.add('shrunk');else header.classList.remove('shrunk');
-  if(y>600)toTop.classList.add('show');else toTop.classList.remove('show');
-});
-toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-
-/* reveal on scroll */
-var rv=document.querySelectorAll('.reveal');
-var rvObs=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rvObs.unobserve(e.target);}});
-},{threshold:.14});
-rv.forEach(function(el){rvObs.observe(el);});
-
-/* animated counters */
-function animate(el){
-  var target=parseInt(el.getAttribute('data-count'),10),dur=1400,t0=null;
-  function step(ts){
-    if(!t0)t0=ts;
-    var p=Math.min((ts-t0)/dur,1);
-    el.textContent=Math.floor(target*(Math.pow(p,0.6))).toLocaleString('fa-IR');
-    if(p<1)requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-var cnt=document.querySelectorAll('[data-count]');
-var cntObs=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){if(e.isIntersecting){animate(e.target);cntObs.unobserve(e.target);}});
-},{threshold:.6});
-cnt.forEach(function(el){cntObs.observe(el);});
-
-/* mobile nav */
-var burger=document.getElementById('burger'),drawer=document.getElementById('drawer');
-var navClose=document.getElementById('navClose'),navBackdrop=document.getElementById('navBackdrop');
-function openNav(){drawer.classList.add('open');burger.classList.add('open');navBackdrop.classList.add('show');document.body.classList.add('no-scroll');}
-function closeNav(){drawer.classList.remove('open');burger.classList.remove('open');navBackdrop.classList.remove('show');document.body.classList.remove('no-scroll');}
-burger.addEventListener('click',openNav);
-navClose.addEventListener('click',closeNav);
-navBackdrop.addEventListener('click',closeNav);
-document.addEventListener('keydown',function(e){if(e.key==='Escape'&&drawer.classList.contains('open'))closeNav();});
-drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeNav);});
-</script>
 </body>
 </html>
