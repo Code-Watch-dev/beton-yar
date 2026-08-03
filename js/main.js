@@ -5,7 +5,9 @@
    Each concern lives in its own guarded IIFE module:
    · Header / back-to-top        · Scroll reveal
    · Animated counters           · Mobile drawer
-   · Seamless marquee
+   · Scroll-spy                  · Seamless marquee
+   · Catalog filter              · FAQ accordion
+   · Contact form validation     · Ambient canvas particles
    All modules are defensive (no-op when their root element is absent).
    ========================================================================== */
 (() => {
@@ -349,5 +351,122 @@
       const field = event.target;
       if (rules[field.name] && rules[field.name](field.value)) setState(field, true);
     });
+  })();
+
+  /* ------------------------------------------------------------------
+     Ambient canvas particles — subtle drifting dust in dark hero areas
+     ------------------------------------------------------------------ */
+  (() => {
+    const host = document.querySelector('.hero, .page-hero');
+    if (!host || prefersReducedMotion) return;
+    if (!document.createElement('canvas').getContext) return;
+
+    const canvas = document.createElement('canvas');
+    canvas.className = 'ambient';
+    canvas.setAttribute('aria-hidden', 'true');
+    host.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const DPR = Math.min(window.devicePixelRatio || 1, 1.5);
+    const COLORS = ['255,255,255', '244,161,64', '226,110,35'];
+    const rand = (min, max) => min + Math.random() * (max - min);
+
+    let width = 0;
+    let height = 0;
+    let particles = [];
+    let running = false;
+    let hostVisible = true;
+    let last = performance.now();
+
+    const fit = () => {
+      const rect = host.getBoundingClientRect();
+      width = rect.width;
+      height = rect.height;
+      canvas.width = Math.max(1, Math.round(width * DPR));
+      canvas.height = Math.max(1, Math.round(height * DPR));
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    };
+
+    const spawn = () => {
+      const count = width < 768 ? 22 : 36;
+      particles = Array.from({ length: count }, () => ({
+        x: rand(0, width),
+        y: rand(0, height),
+        r: rand(1, 2.6),
+        vx: rand(-0.12, 0.12),
+        vy: rand(-0.22, -0.05),
+        a: rand(0.08, 0.5),
+        tw: rand(0.0004, 0.0016),
+        phase: rand(0, Math.PI * 2),
+        c: COLORS[(Math.random() * COLORS.length) | 0],
+      }));
+    };
+
+    const tick = (now) => {
+      if (!running) return;
+      const delta = Math.min(now - last, 50);
+      last = now;
+      ctx.clearRect(0, 0, width, height);
+      for (const p of particles) {
+        p.phase += p.tw * delta;
+        p.x += p.vx * (delta / 16) + Math.sin(p.phase) * 0.02;
+        p.y += p.vy * (delta / 16);
+        if (p.y < -6) {
+          p.y = height + 6;
+          p.x = rand(0, width);
+        }
+        if (p.x < -6) p.x = width + 6;
+        if (p.x > width + 6) p.x = -6;
+        const alpha = p.a * (0.55 + 0.45 * Math.sin(p.phase));
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.c},${alpha.toFixed(3)})`;
+        ctx.fill();
+      }
+      requestAnimationFrame(tick);
+    };
+
+    const sync = () => {
+      const shouldRun = hostVisible && !document.hidden;
+      if (shouldRun && !running) {
+        running = true;
+        last = performance.now();
+        requestAnimationFrame(tick);
+      } else if (!shouldRun) {
+        running = false;
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        hostVisible = entry.isIntersecting;
+        sync();
+      },
+      { threshold: 0 }
+    );
+
+    let resizeTicking = false;
+    window.addEventListener(
+      'resize',
+      () => {
+        if (resizeTicking) return;
+        resizeTicking = true;
+        requestAnimationFrame(() => {
+          fit();
+          spawn();
+          resizeTicking = false;
+        });
+      },
+      { passive: true }
+    );
+
+    document.addEventListener('visibilitychange', sync);
+
+    fit();
+    spawn();
+    observer.observe(host);
+    sync();
   })();
 })();
