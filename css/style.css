@@ -178,6 +178,25 @@ button {
   border-radius: var(--r-sm);
 }
 
+/* Subtle WebKit scrollbar — keeps the dark-on-light identity */
+::-webkit-scrollbar {
+  width: 0.625rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c9c6bd;
+  border-radius: var(--r-full);
+  border: 2px solid var(--bg-soft);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
 [id] {
   scroll-margin-top: calc(var(--header-h) + var(--sp-4));
 }
@@ -2057,6 +2076,40 @@ footer {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   22 · Print
+   -------------------------------------------------------------------------- */
+@media print {
+  .header,
+  .drawer,
+  .nav-backdrop,
+  .topbar,
+  .marquee,
+  #toTop,
+  .hero-ctas,
+  .hero-visual,
+  .cta-band .cta {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    line-height: 1.6;
+  }
+
+  .sect,
+  .stats {
+    padding: 1.5rem 0;
+    break-inside: avoid;
   }
 
   .reveal {
