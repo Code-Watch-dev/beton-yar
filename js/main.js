@@ -194,8 +194,17 @@
     const track = document.getElementById('marqueeTrack');
     if (!track) return;
 
-    const items = Array.from(track.children);
-    items.forEach((item) => track.appendChild(item.cloneNode(true)));
-    track.style.setProperty('--marquee-dur', `${Math.max(20, items.length * 1.7)}s`);
+    /* Clone the track at idle time so first paint stays fast */
+    const build = () => {
+      const items = Array.from(track.children);
+      items.forEach((item) => track.appendChild(item.cloneNode(true)));
+      track.style.setProperty('--marquee-dur', `${Math.max(20, items.length * 1.7)}s`);
+    };
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(build, { timeout: 2000 });
+    } else {
+      setTimeout(build, 0);
+    }
   })();
 })();
