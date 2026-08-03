@@ -278,4 +278,76 @@
 
     render();
   })();
+
+  /* ------------------------------------------------------------------
+     FAQ accordion (contact page)
+     ------------------------------------------------------------------ */
+  (() => {
+    const items = Array.from(document.querySelectorAll('.faq-item'));
+    if (!items.length) return;
+    items.forEach((item) => {
+      const btn = item.querySelector('.faq-btn');
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        items.forEach((other) => {
+          other.classList.remove('open');
+          other.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  })();
+
+  /* ------------------------------------------------------------------
+     Contact form — validation + success state (contact page)
+     ------------------------------------------------------------------ */
+  (() => {
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    if (!form || !success) return;
+
+    const toLatin = (value) => value.replace(/[۰-۹]/g, (d) => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d));
+
+    const rules = {
+      name: (value) => value.trim().length >= 3,
+      phone: (value) => {
+        const digits = toLatin(value).replace(/[^0-9]/g, '');
+        return /^09\d{9}$/.test(digits);
+      },
+      subject: (value) => value !== '',
+    };
+
+    const errors = {
+      name: 'نام باید حداقل ۳ حرف باشد.',
+      phone: 'شماره موبایل معتبر وارد کنید (مثلا ۰۹۱۲۳۴۵۶۷۸۹).',
+      subject: 'لطفا موضوع را انتخاب کنید.',
+    };
+
+    const setState = (field, ok) => {
+      const el = field.closest('.field');
+      el.classList.toggle('invalid', !ok);
+      el.querySelector('.field-error').textContent = ok ? '' : errors[field.name];
+      return ok;
+    };
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      let valid = true;
+      Object.keys(rules).forEach((name) => {
+        const field = form.elements[name];
+        if (!setState(field, rules[name](field.value))) valid = false;
+      });
+      if (!valid) return;
+      form.hidden = true;
+      success.hidden = false;
+    });
+
+    form.addEventListener('input', (event) => {
+      const field = event.target;
+      if (rules[field.name] && rules[field.name](field.value)) setState(field, true);
+    });
+  })();
 })();
