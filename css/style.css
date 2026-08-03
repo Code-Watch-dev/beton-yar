@@ -58,13 +58,13 @@
   --dark-muted: #9aa1ac;
 
   /* ---- Typography ---- */
-  --font: 'Vazirmatn', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
-  --fs-xs: 0.8125rem;              /* 13px */
-  --fs-sm: 0.875rem;               /* 14px */
-  --fs-base: 1rem;                 /* 16px */
-  --fs-md: 1.0625rem;              /* 17px */
-  --fs-lg: 1.125rem;               /* 18px */
-  --fs-xl: 1.5rem;                 /* 24px */
+  --font: "Vazirmatn", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+  --fs-xs: 0.8125rem; /* 13px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-base: 1rem; /* 16px */
+  --fs-md: 1.0625rem; /* 17px */
+  --fs-lg: 1.125rem; /* 18px */
+  --fs-xl: 1.5rem; /* 24px */
   --fs-2xl: clamp(1.4375rem, 4.4vw, 2.25rem);
   --fs-3xl: clamp(1.875rem, 5.6vw, 3.25rem);
   --lh-tight: 1.45;
@@ -252,7 +252,9 @@ button {
   padding: var(--sp-3) 1.75rem;
   border-radius: var(--r-md);
   box-shadow: var(--shadow-accent);
-  transition: background var(--dur-fast), transform var(--dur-fast),
+  transition:
+    background var(--dur-fast),
+    transform var(--dur-fast),
     box-shadow var(--dur-fast);
 }
 
@@ -272,19 +274,22 @@ button {
   justify-content: center;
   gap: var(--sp-2);
   background: transparent;
-  color: var(--ink);
+  color: var(--surface);
   font-weight: 600;
   font-size: var(--fs-sm);
   padding: calc(var(--sp-3) - 0.0625rem) 1.625rem;
   border: 1.5px solid var(--line);
   border-radius: var(--r-md);
-  transition: border-color var(--dur-fast), background var(--dur-fast),
+  transition:
+    border-color var(--dur-fast),
+    background var(--dur-fast),
     color var(--dur-fast);
 }
 
 .cta-ghost:hover {
   border-color: var(--ink);
   background: var(--surface);
+  color: var(--ink);
 }
 
 .badge {
@@ -391,7 +396,9 @@ button {
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
-  transition: box-shadow var(--dur), background 0.3s;
+  transition:
+    box-shadow var(--dur),
+    background 0.3s;
 }
 
 @supports not (backdrop-filter: blur(1px)) {
@@ -462,7 +469,9 @@ button {
   border: 1px solid var(--line);
   border-radius: 0.6875rem;
   flex: none;
-  transition: background var(--dur-fast), border-color var(--dur-fast);
+  transition:
+    background var(--dur-fast),
+    border-color var(--dur-fast);
 }
 
 .burger:hover {
@@ -475,7 +484,9 @@ button {
   height: 0.1375rem;
   background: var(--ink);
   border-radius: 2px;
-  transition: transform var(--dur), opacity var(--dur);
+  transition:
+    transform var(--dur),
+    opacity var(--dur);
 }
 
 .burger.open span:nth-child(1) {
@@ -502,7 +513,9 @@ button {
   flex-direction: column;
   transform: translateX(103%);
   visibility: hidden;
-  transition: transform 0.34s var(--ease), visibility 0s 0.34s;
+  transition:
+    transform 0.34s var(--ease),
+    visibility 0s 0.34s;
   box-shadow: -14px 0 46px rgba(0, 0, 0, 0.24);
   z-index: 13000;
   overflow-y: auto;
@@ -511,7 +524,9 @@ button {
 .drawer.open {
   transform: none;
   visibility: visible;
-  transition: transform 0.34s var(--ease), visibility 0s;
+  transition:
+    transform 0.34s var(--ease),
+    visibility 0s;
 }
 
 .drawer .nav-head {
@@ -552,7 +567,9 @@ button {
   display: grid;
   place-items: center;
   flex: none;
-  transition: background var(--dur-fast), transform var(--dur-fast);
+  transition:
+    background var(--dur-fast),
+    transform var(--dur-fast);
 }
 
 .nav-close:hover {
@@ -576,7 +593,9 @@ button {
   color: #303743;
   border-bottom: 1px solid var(--line);
   border-radius: 0;
-  transition: background var(--dur-fast), color var(--dur-fast);
+  transition:
+    background var(--dur-fast),
+    color var(--dur-fast);
 }
 
 .drawer .nav-links a:hover,
@@ -634,7 +653,9 @@ button {
   background: rgba(13, 15, 19, 0.52);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
   z-index: 12000;
 }
 
@@ -667,7 +688,9 @@ body.no-scroll {
     color: #4a515b;
     padding: 0.5625rem var(--sp-4);
     border-radius: 0.5625rem;
-    transition: color var(--dur-fast), background var(--dur-fast);
+    transition:
+      color var(--dur-fast),
+      background var(--dur-fast);
   }
 
   .nav-links a:hover,
@@ -680,6 +703,7 @@ body.no-scroll {
   .nav-links .cta {
     padding: 0.6875rem 1.375rem;
     justify-content: center;
+    color: var(--surface);
   }
 
   .drawer,
@@ -699,7 +723,8 @@ body.no-scroll {
 .hero {
   position: relative;
   isolation: isolate;
-  background: radial-gradient(75rem 37.5rem at 85% -10%, #2b3544 0%, transparent 60%),
+  background:
+    radial-gradient(75rem 37.5rem at 85% -10%, #2b3544 0%, transparent 60%),
     linear-gradient(180deg, var(--dark-2) 0%, var(--dark) 100%);
   color: #fff;
   overflow: hidden;
@@ -720,7 +745,11 @@ body.no-scroll {
   height: 30rem;
   left: -12rem;
   top: -9rem;
-  background: radial-gradient(circle, rgba(226, 110, 35, 0.22) 0%, transparent 62%);
+  background: radial-gradient(
+    circle,
+    rgba(226, 110, 35, 0.22) 0%,
+    transparent 62%
+  );
   animation: drift-a 26s var(--ease) infinite alternate;
 }
 
@@ -729,7 +758,11 @@ body.no-scroll {
   height: 34rem;
   right: -14rem;
   bottom: -13rem;
-  background: radial-gradient(circle, rgba(47, 158, 95, 0.14) 0%, transparent 62%);
+  background: radial-gradient(
+    circle,
+    rgba(47, 158, 95, 0.14) 0%,
+    transparent 62%
+  );
   animation: drift-b 32s var(--ease) infinite alternate;
 }
 
@@ -876,7 +909,11 @@ body.no-scroll {
 }
 
 .truck-art {
-  background: radial-gradient(13.75rem 8.75rem at 60% 40%, rgba(240, 181, 96, 0.14), transparent 70%);
+  background: radial-gradient(
+    13.75rem 8.75rem at 60% 40%,
+    rgba(240, 181, 96, 0.14),
+    transparent 70%
+  );
   height: 13.125rem;
   position: relative;
 }
@@ -1165,7 +1202,9 @@ body.no-scroll {
   border-radius: var(--r-lg);
   padding: var(--sp-6) 1.125rem;
   text-align: center;
-  transition: transform var(--dur), box-shadow var(--dur);
+  transition:
+    transform var(--dur),
+    box-shadow var(--dur);
 }
 
 .stat:hover {
@@ -1254,7 +1293,10 @@ body.no-scroll {
   border-radius: var(--r-lg);
   padding: var(--sp-6) var(--sp-5);
   background: var(--surface);
-  transition: transform var(--dur), box-shadow var(--dur), border-color var(--dur);
+  transition:
+    transform var(--dur),
+    box-shadow var(--dur),
+    border-color var(--dur);
   overflow: hidden;
 }
 
@@ -1339,7 +1381,8 @@ body.no-scroll {
 .why {
   position: relative;
   isolation: isolate;
-  background: radial-gradient(56.25rem 31.25rem at 10% 10%, #232a36 0%, transparent 55%),
+  background:
+    radial-gradient(56.25rem 31.25rem at 10% 10%, #232a36 0%, transparent 55%),
     linear-gradient(180deg, var(--ink) 0%, var(--dark) 100%);
   color: #fff;
   overflow: hidden;
@@ -1355,7 +1398,11 @@ body.no-scroll {
   border-radius: 50%;
   right: -9rem;
   top: -10rem;
-  background: radial-gradient(circle, rgba(226, 110, 35, 0.14), transparent 60%);
+  background: radial-gradient(
+    circle,
+    rgba(226, 110, 35, 0.14),
+    transparent 60%
+  );
   pointer-events: none;
   z-index: -1;
   animation: drift-b 30s var(--ease) infinite alternate;
@@ -1380,7 +1427,9 @@ body.no-scroll {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--r-lg);
   padding: var(--sp-6) 1.625rem;
-  transition: background var(--dur), transform var(--dur);
+  transition:
+    background var(--dur),
+    transform var(--dur);
 }
 
 .why-card:hover {
@@ -1447,7 +1496,9 @@ body.no-scroll {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease),
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
     border-color var(--dur);
 }
 
@@ -1460,7 +1511,12 @@ body.no-scroll {
 .pc-media {
   position: relative;
   height: 9rem;
-  background: radial-gradient(circle at 50% 115%, rgba(226, 110, 35, 0.14), transparent 55%),
+  background:
+    radial-gradient(
+      circle at 50% 115%,
+      rgba(226, 110, 35, 0.14),
+      transparent 55%
+    ),
     linear-gradient(140deg, #f1f2f4, #e7eaee);
   display: grid;
   place-items: center;
@@ -1472,7 +1528,12 @@ body.no-scroll {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.55) 50%, transparent 70%);
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 70%
+  );
   transform: translateX(-120%);
   transition: transform 0.9s var(--ease);
   pointer-events: none;
@@ -1491,7 +1552,9 @@ body.no-scroll {
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
-  transition: transform var(--dur) var(--ease), color var(--dur);
+  transition:
+    transform var(--dur) var(--ease),
+    color var(--dur);
 }
 
 .price-card:hover .pc-icon {
@@ -1600,7 +1663,10 @@ body.no-scroll {
     opacity: 0;
     overflow: hidden;
     transform: translateY(0.25rem);
-    transition: opacity var(--dur), transform var(--dur), max-height var(--dur),
+    transition:
+      opacity var(--dur),
+      transform var(--dur),
+      max-height var(--dur),
       margin var(--dur);
   }
 
@@ -1643,7 +1709,9 @@ body.no-scroll {
   gap: var(--sp-4);
   align-items: flex-start;
   text-align: right;
-  transition: transform var(--dur), box-shadow var(--dur);
+  transition:
+    transform var(--dur),
+    box-shadow var(--dur);
 }
 
 .step:hover {
@@ -1719,7 +1787,9 @@ body.no-scroll {
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
   padding: var(--sp-6);
-  transition: box-shadow var(--dur), transform var(--dur);
+  transition:
+    box-shadow var(--dur),
+    transform var(--dur);
 }
 
 .t-card:hover {
@@ -1905,7 +1975,9 @@ footer {
   font-size: var(--fs-sm);
   position: relative;
   padding-right: var(--sp-4);
-  transition: padding-right var(--dur-fast), color var(--dur-fast);
+  transition:
+    padding-right var(--dur-fast),
+    color var(--dur-fast);
 }
 
 .ft-links a::before {
@@ -1997,7 +2069,10 @@ footer {
   opacity: 0;
   visibility: hidden;
   transform: translateY(0.875rem);
-  transition: opacity var(--dur), transform var(--dur), visibility var(--dur),
+  transition:
+    opacity var(--dur),
+    transform var(--dur),
+    visibility var(--dur),
     background var(--dur);
   box-shadow: var(--shadow-lg);
   z-index: 90;
@@ -2019,7 +2094,9 @@ footer {
 .reveal {
   opacity: 0;
   transform: translateY(1.75rem);
-  transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
+  transition:
+    opacity var(--dur-slow) var(--ease),
+    transform var(--dur-slow) var(--ease);
 }
 
 .reveal.in {
@@ -2133,7 +2210,8 @@ footer {
 .page-hero {
   position: relative;
   isolation: isolate;
-  background: radial-gradient(60rem 30rem at 85% -10%, #2b3544 0%, transparent 60%),
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, #2b3544 0%, transparent 60%),
     linear-gradient(180deg, var(--dark-2) 0%, var(--dark) 100%);
   color: #fff;
   overflow: hidden;
@@ -2271,7 +2349,9 @@ footer {
   font: inherit;
   font-size: var(--fs-sm);
   color: var(--text);
-  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+  transition:
+    border-color var(--dur-fast),
+    box-shadow var(--dur-fast);
 }
 
 .filter-search input::placeholder {
@@ -2298,8 +2378,12 @@ footer {
   font-size: var(--fs-sm);
   padding: 0.5rem var(--sp-4);
   border-radius: var(--r-full);
-  transition: border-color var(--dur-fast), color var(--dur-fast),
-    background var(--dur-fast), box-shadow var(--dur-fast), transform var(--dur-fast);
+  transition:
+    border-color var(--dur-fast),
+    color var(--dur-fast),
+    background var(--dur-fast),
+    box-shadow var(--dur-fast),
+    transform var(--dur-fast);
 }
 
 .chip:hover {
@@ -2381,7 +2465,12 @@ footer {
 
 .ps-media {
   position: relative;
-  background: radial-gradient(circle at 50% 115%, rgba(226, 110, 35, 0.16), transparent 55%),
+  background:
+    radial-gradient(
+      circle at 50% 115%,
+      rgba(226, 110, 35, 0.16),
+      transparent 55%
+    ),
     linear-gradient(140deg, #f1f2f4, #e7eaee);
   border: 1px solid var(--line);
   border-radius: var(--r-xl);
@@ -2714,7 +2803,9 @@ footer {
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
   padding: var(--sp-6) var(--sp-5);
-  transition: transform var(--dur), box-shadow var(--dur);
+  transition:
+    transform var(--dur),
+    box-shadow var(--dur);
 }
 
 .value-card:hover {
@@ -2782,7 +2873,9 @@ footer {
   border-radius: var(--r-lg);
   padding: var(--sp-6) var(--sp-5);
   text-align: center;
-  transition: transform var(--dur), box-shadow var(--dur);
+  transition:
+    transform var(--dur),
+    box-shadow var(--dur);
 }
 
 .info-card:hover {
@@ -2897,7 +2990,9 @@ footer {
   font: inherit;
   font-size: var(--fs-sm);
   color: var(--text);
-  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+  transition:
+    border-color var(--dur-fast),
+    box-shadow var(--dur-fast);
 }
 
 .input::placeholder {
@@ -2981,7 +3076,9 @@ textarea.input {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
-  transition: border-color var(--dur), box-shadow var(--dur);
+  transition:
+    border-color var(--dur),
+    box-shadow var(--dur);
 }
 
 .faq-item.open {
@@ -3034,5 +3131,3 @@ textarea.input {
   color: var(--muted);
   line-height: 2;
 }
-
-
