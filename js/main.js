@@ -163,6 +163,7 @@
     const navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'))
       .filter((link) => !link.classList.contains('cta'));
     if (!navLinks.length || !('IntersectionObserver' in window)) return;
+    if (document.body.dataset.scrollspy === undefined) return;
 
     const sections = navLinks
       .map((link) => document.querySelector(link.getAttribute('href')))
@@ -206,5 +207,75 @@
     } else {
       setTimeout(build, 0);
     }
+  })();
+
+  /* ------------------------------------------------------------------
+     Catalog — live filter + search (products page)
+     ------------------------------------------------------------------ */
+  (() => {
+    const grid = document.getElementById('catalogGrid');
+    const chips = document.querySelectorAll('.filter-chips .chip');
+    const search = document.getElementById('productSearch');
+    const status = document.getElementById('catalogStatus');
+    const empty = document.getElementById('emptyState');
+    const resetBtn = document.getElementById('resetFilters');
+    if (!grid || !chips.length) return;
+
+    const formatFa = new Intl.NumberFormat('fa-IR');
+    const toLatin = (value) =>
+      value.replace(/[۰-۹]/g, (d) => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d));
+    const cards = Array.from(grid.children);
+    let activeFilter = 'all';
+    let query = '';
+
+    const matches = (card) => {
+      const catOk = activeFilter === 'all' || card.dataset.cat === activeFilter;
+      const q = toLatin(query).trim().toLowerCase();
+      const textOk = !q || toLatin(card.dataset.title).toLowerCase().includes(q);
+      return catOk && textOk;
+    };
+
+    const render = () => {
+      let visible = 0;
+      cards.forEach((card) => {
+        const show = matches(card);
+        card.classList.toggle('is-hidden', !show);
+        if (show) visible += 1;
+      });
+      empty.hidden = visible !== 0;
+      status.hidden = visible === 0;
+      status.textContent = `${formatFa.format(visible)} محصول`;
+    };
+
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        activeFilter = chip.dataset.filter;
+        chips.forEach((c) => {
+          const on = c === chip;
+          c.classList.toggle('is-active', on);
+          c.setAttribute('aria-pressed', String(on));
+        });
+        render();
+      });
+    });
+
+    search.addEventListener('input', () => {
+      query = search.value;
+      render();
+    });
+
+    resetBtn.addEventListener('click', () => {
+      activeFilter = 'all';
+      query = '';
+      search.value = '';
+      chips.forEach((c) => {
+        const on = c.dataset.filter === 'all';
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-pressed', String(on));
+      });
+      render();
+    });
+
+    render();
   })();
 })();
