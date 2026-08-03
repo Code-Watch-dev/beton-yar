@@ -556,7 +556,8 @@ button {
   transition: background var(--dur-fast), color var(--dur-fast);
 }
 
-.drawer .nav-links a:hover {
+.drawer .nav-links a:hover,
+.drawer .nav-links a.active {
   background: var(--accent-soft);
   color: var(--accent);
 }
@@ -645,7 +646,8 @@ body.no-scroll {
     transition: color var(--dur-fast), background var(--dur-fast);
   }
 
-  .nav-links a:hover {
+  .nav-links a:hover,
+  .nav-links a.active {
     color: var(--accent);
     background: var(--accent-soft);
   }
