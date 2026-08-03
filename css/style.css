@@ -3166,6 +3166,175 @@ textarea.input {
 }
 
 /* --------------------------------------------------------------------------
+   29 · Responsive polish & fine-tuning
+   -------------------------------------------------------------------------- */
+
+/* Wide text never overflows its grid cell */
+.cat-grid > *,
+.why-grid > *,
+.t-grid > *,
+.step-grid > *,
+.value-grid > *,
+.info-grid > *,
+.about-grid > * {
+  min-width: 0;
+}
+
+/* Scrollable spec table on narrow screens */
+.spec-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.spec-table {
+  min-width: 28rem;
+}
+
+/* Small phones (<= 575px) */
+@media (max-width: 35.99rem) {
+  .hero-in {
+    padding: 2.5rem 0 4rem;
+  }
+
+  .page-hero {
+    padding: 2rem 0 2.5rem;
+  }
+
+  .pc-media {
+    height: 8.75rem;
+  }
+
+  .pc-icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    padding: 1rem;
+    border-radius: 1.125rem;
+  }
+
+  .ps-media .pc-icon {
+    width: 6.5rem;
+    height: 6.5rem;
+    padding: 1.4rem;
+    border-radius: 1.5rem;
+  }
+
+  .ps-media {
+    min-height: 15rem;
+    padding: var(--sp-8) var(--sp-4);
+  }
+
+  .cta-band {
+    padding: 2rem 1.375rem;
+  }
+
+  .truck-card {
+    padding: var(--sp-4);
+  }
+
+  .truck-art {
+    height: 10.5rem;
+  }
+
+  .stat b {
+    font-size: 1.75rem;
+  }
+
+  .spec-table th,
+  .spec-table td {
+    padding: var(--sp-3) var(--sp-4);
+  }
+
+  .info-card {
+    padding: var(--sp-5) var(--sp-3);
+  }
+
+  .ps-price {
+    font-size: 1.5rem;
+  }
+
+  .ps-price-box {
+    padding: var(--sp-3) var(--sp-4);
+  }
+
+  .ps-ctas .cta,
+  .ps-ctas .cta-ghost {
+    width: 100%;
+  }
+
+  .faq-btn {
+    font-size: var(--fs-sm);
+  }
+
+  .mc-head {
+    padding: var(--sp-3) var(--sp-4);
+  }
+
+  .mc-route {
+    padding: 0.4375rem 0.75rem;
+  }
+
+  .filter-search {
+    max-width: none;
+  }
+
+  .about-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .crumbs {
+    font-size: var(--fs-xs);
+  }
+}
+
+/* Landscape phones — keep the fold tight */
+@media (max-height: 30rem) and (orientation: landscape) {
+  .hero-in {
+    padding: 1.75rem 0 2.5rem;
+  }
+
+  .hero-visual,
+  .hero-points {
+    display: none;
+  }
+}
+
+/* Tablet (48rem–64rem) spacing tune */
+@media (min-width: 48rem) and (max-width: 63.99rem) {
+  .cat-grid {
+    gap: var(--sp-4);
+  }
+
+  .hero-in {
+    gap: 2.25rem;
+  }
+
+  .ps-media {
+    min-height: 16rem;
+  }
+}
+
+/* Notch / safe-area insets */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .drawer .nav-foot {
+    padding-bottom: calc(1.75rem + env(safe-area-inset-bottom));
+  }
+
+  #toTop {
+    bottom: calc(1.125rem + env(safe-area-inset-bottom));
+  }
+}
+
+/* --------------------------------------------------------------------------
+    30 · Ambient canvas particles (hero / page-hero)
+   -------------------------------------------------------------------------- */
+.ambient {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
    28 · Map location card (contact page)
    -------------------------------------------------------------------------- */
 .map-card {
