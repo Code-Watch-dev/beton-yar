@@ -1178,6 +1178,10 @@ body.no-scroll {
 .stat b .unit {
   font-style: normal;
   color: var(--accent);
+  font-size: 0.55em;
+  font-weight: 800;
+  vertical-align: super;
+  margin-inline-start: 0.125em;
 }
 
 .stat span {
