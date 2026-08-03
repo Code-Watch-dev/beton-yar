@@ -1503,45 +1503,66 @@ body.no-scroll {
 
 .price-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
   gap: var(--sp-3);
 }
 
+.price-grid > * {
+  min-width: 0;
+}
+
 .price-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--r-xl);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
   transition:
     transform var(--dur) var(--ease),
     box-shadow var(--dur) var(--ease),
     border-color var(--dur);
 }
 
-.price-card:hover {
-  transform: translateY(-0.375rem);
-  box-shadow: var(--shadow-lg);
-  border-color: transparent;
+.price-card:hover,
+.price-card:focus-within {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 24px 48px rgba(23, 27, 34, 0.1);
+  border-color: var(--line-strong);
 }
 
 .pc-media {
   position: relative;
-  height: 9rem;
+  height: 10.5rem;
   background:
     radial-gradient(
-      circle at 50% 115%,
-      rgba(226, 110, 35, 0.14),
-      transparent 55%
+      circle at 50% 120%,
+      rgba(226, 110, 35, 0.18),
+      transparent 58%
     ),
-    linear-gradient(140deg, #f1f2f4, #e7eaee);
+    linear-gradient(160deg, #f0f1f4, #e4e7ec);
   display: grid;
   place-items: center;
   overflow: hidden;
   isolation: isolate;
 }
 
+/* subtle blueprint grid backdrop */
+.pc-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(23, 27, 34, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 27, 34, 0.05) 1px, transparent 1px);
+  background-size: 1.375rem 1.375rem;
+  -webkit-mask-image: radial-gradient(circle at 50% 70%, #000 0%, transparent 78%);
+  mask-image: radial-gradient(circle at 50% 70%, #000 0%, transparent 78%);
+}
+
+/* shine sweep */
 .pc-media::after {
   content: "";
   position: absolute;
@@ -1549,35 +1570,41 @@ body.no-scroll {
   background: linear-gradient(
     120deg,
     transparent 30%,
-    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0.6) 50%,
     transparent 70%
   );
-  transform: translateX(-120%);
+  transform: translateX(-130%) skewX(-8deg);
   transition: transform 0.9s var(--ease);
   pointer-events: none;
 }
 
-.price-card:hover .pc-media::after {
-  transform: translateX(120%);
+.price-card:hover .pc-media::after,
+.price-card:focus-within .pc-media::after {
+  transform: translateX(130%) skewX(-8deg);
 }
 
 .pc-icon {
-  width: 4.5rem;
-  height: 4.5rem;
-  color: var(--muted);
+  width: 5.25rem;
+  height: 5.25rem;
+  padding: 1.15rem;
+  border-radius: 1.375rem;
+  background: var(--surface);
+  box-shadow: 0 14px 30px rgba(23, 27, 34, 0.14);
+  color: var(--accent);
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.8;
+  stroke-width: 1.7;
   stroke-linecap: round;
   stroke-linejoin: round;
   transition:
     transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
     color var(--dur);
 }
 
 .price-card:hover .pc-icon {
-  color: var(--accent);
-  transform: scale(1.1) translateY(-0.25rem);
+  transform: translateY(-0.3rem) scale(1.05);
+  box-shadow: 0 18px 34px rgba(226, 110, 35, 0.24);
 }
 
 .pc-tag {
@@ -1588,23 +1615,27 @@ body.no-scroll {
   color: #fff;
   font-size: 0.71875rem;
   font-weight: 700;
-  padding: 0.25rem 0.6875rem;
+  letter-spacing: 0.2px;
+  padding: 0.3125rem 0.75rem;
   border-radius: var(--r-full);
   z-index: 2;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 6px 14px rgba(201, 122, 28, 0.35);
 }
 
 .pc-tag--stock {
   background: linear-gradient(135deg, var(--green), var(--green-strong));
+  box-shadow: 0 6px 14px rgba(47, 158, 95, 0.32);
 }
 
 .pc-tag--sale {
   background: linear-gradient(135deg, var(--blue), var(--blue-strong));
+  box-shadow: 0 6px 14px rgba(47, 107, 179, 0.32);
 }
 
 .pc-body {
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: var(--sp-4);
   padding: var(--sp-5);
 }
@@ -1644,57 +1675,49 @@ body.no-scroll {
   font-size: var(--fs-xs);
   color: var(--muted);
   background: var(--bg-soft);
+  border: 1px solid var(--line);
   padding: 0.25rem 0.625rem;
   border-radius: var(--r-full);
   white-space: nowrap;
 }
 
+/* Always-visible action link — full-width outline CTA */
 .pc-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.375rem;
-  font-size: var(--fs-sm);
-  font-weight: 600;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.6875rem var(--sp-4);
+  border: 1.5px solid var(--accent);
+  border-radius: var(--r-md);
+  background: var(--surface);
   color: var(--accent);
-  transition: gap var(--dur-fast);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  transition:
+    background var(--dur-fast),
+    color var(--dur-fast),
+    box-shadow var(--dur-fast),
+    transform var(--dur-fast);
 }
 
 .pc-link .ic {
-  width: 1.125rem;
-  height: 1.125rem;
+  width: 1rem;
+  height: 1rem;
   transition: transform var(--dur-fast);
 }
 
-.pc-link:hover {
-  gap: 0.625rem;
+.pc-link:hover,
+.pc-link:focus-visible {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: var(--shadow-accent);
+  transform: translateY(-0.125rem);
 }
 
 .pc-link:hover .ic {
-  transform: translateX(-0.125rem);
-}
-
-/* On precise-pointer devices the inquiry link reveals on hover */
-@media (hover: hover) and (pointer: fine) {
-  .pc-link {
-    max-height: 0;
-    margin: calc(-1 * var(--sp-4)) 0 0; /* cancel the flex gap while collapsed */
-    opacity: 0;
-    overflow: hidden;
-    transform: translateY(0.25rem);
-    transition:
-      opacity var(--dur),
-      transform var(--dur),
-      max-height var(--dur),
-      margin var(--dur);
-  }
-
-  .price-card:hover .pc-link,
-  .price-card:focus-within .pc-link {
-    max-height: 2rem;
-    margin: 0;
-    opacity: 1;
-    transform: none;
-  }
+  transform: translateX(-0.1875rem);
 }
 
 @media (min-width: 64rem) {
@@ -2504,8 +2527,11 @@ footer {
 }
 
 .ps-media .pc-icon {
-  width: 9rem;
-  height: 9rem;
+  width: 8.5rem;
+  height: 8.5rem;
+  padding: 1.75rem;
+  border-radius: 2rem;
+  box-shadow: 0 24px 48px rgba(23, 27, 34, 0.16);
 }
 
 .ps-media .pc-tag {
