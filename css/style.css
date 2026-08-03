@@ -1050,7 +1050,7 @@ body.no-scroll {
 
 @media (min-width: 48rem) {
   .fc-1 {
-    top: -2.125rem;
+    top: -3.5rem;
     right: -0.875rem;
     padding: var(--sp-3) var(--sp-4);
     transform: none;
@@ -1067,7 +1067,7 @@ body.no-scroll {
   }
 
   .fc-2 {
-    bottom: -1.625rem;
+    bottom: -4.625rem;
     left: -1.25rem;
     padding: var(--sp-3) var(--sp-4);
     transform: none;
@@ -1085,7 +1085,7 @@ body.no-scroll {
 
   .fc-3 {
     display: flex;
-    top: 7.5rem;
+    top: 5.5rem;
     left: -2rem;
     animation: floaty 5.5s ease-in-out 0.6s infinite;
   }
