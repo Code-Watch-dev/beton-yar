@@ -576,7 +576,8 @@ button {
 }
 
 .drawer .nav-links a:hover,
-.drawer .nav-links a.active {
+.drawer .nav-links a.active,
+.drawer .nav-links a.nav-current {
   background: var(--accent-soft);
   color: var(--accent);
 }
@@ -666,7 +667,8 @@ body.no-scroll {
   }
 
   .nav-links a:hover,
-  .nav-links a.active {
+  .nav-links a.active,
+  .nav-links a.nav-current {
     color: var(--accent);
     background: var(--accent-soft);
   }
