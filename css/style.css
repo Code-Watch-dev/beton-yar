@@ -121,8 +121,10 @@
 }
 
 html {
+  font-family: var(--font);
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  color-scheme: light;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -140,6 +142,21 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font);
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+p {
+  overflow-wrap: break-word;
 }
 
 img,
@@ -1258,7 +1275,8 @@ body.no-scroll {
   font-size: var(--fs-2xl);
   color: var(--ink);
   font-weight: 800;
-  line-height: 1.4;
+  line-height: 1.35;
+  letter-spacing: -0.3px;
   margin: var(--sp-3) 0;
 }
 
@@ -2247,17 +2265,20 @@ footer {
 }
 
 .page-hero h1 {
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-3xl);
   font-weight: 800;
   line-height: var(--lh-tight);
+  letter-spacing: -0.5px;
   margin-top: var(--sp-4);
+  max-width: 40rem;
 }
 
-.page-hero .hero-sub {
+.page-hero .hero-sub,
+.page-hero > .container > p {
   color: var(--dark-muted);
-  font-size: var(--fs-base);
+  font-size: var(--fs-md);
   max-width: 36rem;
-  margin-top: var(--sp-2);
+  margin-top: var(--sp-3);
 }
 
 .crumbs ol {
@@ -2496,7 +2517,8 @@ footer {
   font-size: var(--fs-2xl);
   color: var(--ink);
   font-weight: 800;
-  line-height: 1.4;
+  line-height: 1.35;
+  letter-spacing: -0.3px;
   margin-bottom: var(--sp-3);
 }
 
@@ -2651,6 +2673,8 @@ footer {
   font-size: var(--fs-2xl);
   color: var(--ink);
   font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: -0.3px;
   margin-bottom: var(--sp-4);
 }
 
