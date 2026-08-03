@@ -685,6 +685,11 @@ body.no-scroll {
   overflow: hidden;
 }
 
+/* Desktop nav is hidden by default; burger + drawer serve mobile/tablet */
+.nav {
+  display: none;
+}
+
 /* Desktop navigation */
 @media (min-width: 64rem) {
   .nav {
