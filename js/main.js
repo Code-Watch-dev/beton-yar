@@ -537,3 +537,24 @@
     sync();
   })();
 })();
+
+/* --------------------------------------------------------------------------
+   Footer year — keeps the copyright year current in the Jalali calendar.
+   Falls back to the static markup value when Intl is unavailable.
+-------------------------------------------------------------------------- */
+(() => {
+  const els = document.querySelectorAll('.footer-year');
+  if (!els.length) return;
+  let year = '';
+  try {
+    year = new Intl.DateTimeFormat('fa-IR-u-ca-persian', {
+      year: 'numeric',
+    }).format(new Date());
+  } catch (_) {
+    return;
+  }
+  if (!year) return;
+  els.forEach((el) => {
+    el.textContent = year;
+  });
+})();
