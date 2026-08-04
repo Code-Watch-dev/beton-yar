@@ -1707,14 +1707,24 @@ body.no-scroll {
   white-space: nowrap;
 }
 
+/* Always-visible action row — order (WhatsApp) + details side by side */
+.pc-actions {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: var(--sp-2);
+}
+
+.pc-actions .pc-wa,
+.pc-actions .pc-link {
+  padding: 0.625rem 0.75rem;
+}
+
 /* Always-visible action link — full-width outline CTA */
 .pc-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  width: 100%;
-  padding: 0.6875rem var(--sp-4);
   border: 1.5px solid var(--accent);
   border-radius: var(--r-md);
   background: var(--surface);
@@ -3537,8 +3547,6 @@ textarea.input {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  width: 100%;
-  padding: 0.6875rem var(--sp-4);
   border-radius: var(--r-md);
   background: linear-gradient(135deg, #2ebf5f, #1fa54c);
   color: #fff;
