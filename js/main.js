@@ -138,13 +138,34 @@
     const backdrop = document.getElementById('navBackdrop');
     if (!burger || !drawer || !closeBtn || !backdrop) return;
 
+    const supportsInert = 'inert' in HTMLElement.prototype;
+    const rest = Array.from(document.body.children).filter(
+      (el) => el !== drawer && el !== backdrop
+    );
+    let lastFocus = null;
+
+    const setRestInert = (inert) => {
+      if (!supportsInert) return;
+      rest.forEach((el) => {
+        el.inert = inert;
+      });
+    };
+
     const setState = (open) => {
       drawer.classList.toggle('open', open);
       burger.classList.toggle('open', open);
       burger.setAttribute('aria-expanded', String(open));
+      drawer.setAttribute('aria-hidden', String(!open));
       backdrop.classList.toggle('show', open);
       document.body.classList.toggle('no-scroll', open);
-      (open ? closeBtn : burger).focus();
+      if (open) {
+        lastFocus = document.activeElement;
+        setRestInert(true);
+        closeBtn.focus();
+      } else {
+        setRestInert(false);
+        (lastFocus || burger).focus();
+      }
     };
 
     const open = () => setState(true);
@@ -154,6 +175,26 @@
     closeBtn.addEventListener('click', close);
     backdrop.addEventListener('click', close);
     drawer.querySelectorAll('a').forEach((link) => link.addEventListener('click', close));
+
+    const FOCUSABLE =
+      'a[href], button:not([disabled]), input:not([disabled]), select, textarea, [tabindex]:not([tabindex="-1"])';
+
+    drawer.addEventListener('keydown', (event) => {
+      if (event.key !== 'Tab') return;
+      const items = Array.from(drawer.querySelectorAll(FOCUSABLE)).filter(
+        (el) => el.offsetParent !== null
+      );
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
 
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && drawer.classList.contains('open')) close();
