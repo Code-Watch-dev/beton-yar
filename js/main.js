@@ -7,7 +7,9 @@
    · Animated counters           · Mobile drawer
    · Scroll-spy                  · Seamless marquee
    · Catalog filter              · FAQ accordion
-   · Contact form validation     · Ambient canvas particles
+   · Contact form validation     · WhatsApp order links
+   · Materials calculator        · Jalali price date
+   · Ambient canvas particles
    All modules are defensive (no-op when their root element is absent).
    ========================================================================== */
 (() => {
@@ -351,6 +353,71 @@
       const field = event.target;
       if (rules[field.name] && rules[field.name](field.value)) setState(field, true);
     });
+  })();
+
+  /* ------------------------------------------------------------------
+     WhatsApp — prefill order links with the product name
+     ------------------------------------------------------------------ */
+  (() => {
+    const WA = '989113274610';
+    document.querySelectorAll('.pc-wa').forEach((link) => {
+      const card = link.closest('.price-card');
+      const titleEl = card && card.querySelector('.pc-title');
+      const title = (titleEl && titleEl.textContent.trim()) || '';
+      const text = `سلام، لطفاً قیمت و موجودی «${title}» را اعلام کنید.`;
+      link.href = `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
+    });
+  })();
+
+  /* ------------------------------------------------------------------
+     Materials calculator — area × thickness → cement / aggregate / water
+     ------------------------------------------------------------------ */
+  (() => {
+    const area = document.getElementById('calcArea');
+    const depth = document.getElementById('calcDepth');
+    const mix = document.getElementById('calcMix');
+    const vol = document.getElementById('calcVol');
+    const cement = document.getElementById('calcCement');
+    const sand = document.getElementById('calcSand');
+    const water = document.getElementById('calcWater');
+    if (!area || !depth || !mix || !vol || !cement || !sand || !water) return;
+
+    const fmt = new Intl.NumberFormat('fa-IR', { maximumFractionDigits: 1 });
+    const fmt0 = new Intl.NumberFormat('fa-IR', { maximumFractionDigits: 0 });
+
+    const render = () => {
+      const a = Number.parseFloat(area.value) || 0;
+      const d = (Number.parseFloat(depth.value) || 0) / 100;
+      const c = Number.parseInt(mix.value, 10) || 350;
+      const v = a * d;
+      const cementKg = v * c;
+      const bags = Math.ceil(cementKg / 50);
+      const sandT = v * 1.55;
+      const waterL = v * 180;
+      vol.textContent = v > 0 ? fmt.format(v) : '—';
+      cement.textContent = bags > 0 ? fmt0.format(bags) : '—';
+      sand.textContent = v > 0 ? fmt.format(sandT) : '—';
+      water.textContent = v > 0 ? fmt0.format(waterL) : '—';
+    };
+
+    [area, depth, mix].forEach((el) => el.addEventListener('input', render));
+  })();
+
+  /* ------------------------------------------------------------------
+     Price date — today in the Jalali calendar next to the price list
+     ------------------------------------------------------------------ */
+  (() => {
+    const el = document.getElementById('priceDate');
+    if (!el) return;
+    try {
+      el.textContent = new Intl.DateTimeFormat('fa-IR-u-ca-persian', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+      }).format(new Date());
+    } catch (err) {
+      el.textContent = '';
+    }
   })();
 
   /* ------------------------------------------------------------------
