@@ -362,6 +362,13 @@
 
     const toLatin = (value) => value.replace(/[۰-۹]/g, (d) => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d));
 
+    const SUBJECT_LABELS = {
+      price: 'استعلام قیمت روز',
+      order: 'ثبت سفارش',
+      delivery: 'پیگیری بار',
+      other: 'سایر موارد',
+    };
+
     const rules = {
       name: (value) => value.trim().length >= 3,
       phone: (value) => {
@@ -400,6 +407,22 @@
         if (firstInvalid) firstInvalid.focus();
         return;
       }
+      const message = [
+        'سلام بتن‌یار، از فرم سایت پیام می‌فرستم.',
+        'نام: ' + form.elements.name.value.trim(),
+        'شماره تماس: ' + toLatin(form.elements.phone.value).replace(/[^0-9]/g, ''),
+        'موضوع: ' + (SUBJECT_LABELS[form.elements.subject.value] || 'سایر موارد'),
+        form.elements.message.value.trim()
+          ? 'توضیحات: ' + form.elements.message.value.trim()
+          : null,
+      ]
+        .filter(Boolean)
+        .join('\n');
+      window.open(
+        'https://wa.me/989113274610?text=' + encodeURIComponent(message),
+        '_blank',
+        'noopener'
+      );
       form.hidden = true;
       success.hidden = false;
       success.focus();
