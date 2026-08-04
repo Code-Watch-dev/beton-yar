@@ -330,8 +330,14 @@
   (() => {
     const items = Array.from(document.querySelectorAll('.faq-item'));
     if (!items.length) return;
-    items.forEach((item) => {
+    items.forEach((item, index) => {
       const btn = item.querySelector('.faq-btn');
+      const panel = item.querySelector('.faq-panel');
+      if (panel && !panel.id) {
+        const panelId = 'faqPanel' + (index + 1);
+        panel.id = panelId;
+        btn.setAttribute('aria-controls', panelId);
+      }
       btn.addEventListener('click', () => {
         const isOpen = item.classList.contains('open');
         items.forEach((other) => {
@@ -374,6 +380,7 @@
     const setState = (field, ok) => {
       const el = field.closest('.field');
       el.classList.toggle('invalid', !ok);
+      field.setAttribute('aria-invalid', String(!ok));
       el.querySelector('.field-error').textContent = ok ? '' : errors[field.name];
       return ok;
     };
@@ -381,13 +388,21 @@
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       let valid = true;
+      let firstInvalid = null;
       Object.keys(rules).forEach((name) => {
         const field = form.elements[name];
-        if (!setState(field, rules[name](field.value))) valid = false;
+        if (!setState(field, rules[name](field.value))) {
+          valid = false;
+          if (!firstInvalid) firstInvalid = field;
+        }
       });
-      if (!valid) return;
+      if (!valid) {
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
       form.hidden = true;
       success.hidden = false;
+      success.focus();
     });
 
     form.addEventListener('input', (event) => {

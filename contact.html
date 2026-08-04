@@ -189,25 +189,25 @@
           <div class="form-row">
             <div class="field" data-field="name">
               <label for="fName">نام و نام خانوادگی <span>*</span></label>
-              <input class="input" id="fName" name="name" type="text" placeholder="مثلا: علی محمدی" autocomplete="name">
-              <span class="field-error" role="alert"></span>
+              <input class="input" id="fName" name="name" type="text" placeholder="مثلا: علی محمدی" autocomplete="name" required aria-required="true" aria-describedby="fNameErr">
+              <span class="field-error" id="fNameErr" role="alert"></span>
             </div>
             <div class="field" data-field="phone">
               <label for="fPhone">شماره تماس <span>*</span></label>
-              <input class="input" id="fPhone" name="phone" type="tel" placeholder="۰۹۱۲۳۴۵۶۷۸۹" dir="rtl" inputmode="tel" autocomplete="tel">
-              <span class="field-error" role="alert"></span>
+              <input class="input" id="fPhone" name="phone" type="tel" placeholder="۰۹۱۲۳۴۵۶۷۸۹" dir="rtl" inputmode="tel" autocomplete="tel" required aria-required="true" aria-describedby="fPhoneErr">
+              <span class="field-error" id="fPhoneErr" role="alert"></span>
             </div>
           </div>
           <div class="field" data-field="subject">
             <label for="fSubject">موضوع <span>*</span></label>
-            <select class="input" id="fSubject" name="subject">
+            <select class="input" id="fSubject" name="subject" required aria-required="true" aria-describedby="fSubjectErr">
               <option value="" selected>انتخاب کنید</option>
               <option value="price">استعلام قیمت روز</option>
               <option value="order">ثبت سفارش</option>
               <option value="delivery">پیگیری بار</option>
               <option value="other">سایر موارد</option>
             </select>
-            <span class="field-error" role="alert"></span>
+            <span class="field-error" id="fSubjectErr" role="alert"></span>
           </div>
           <div class="field" data-field="message">
             <label for="fMessage">توضیحات</label>
@@ -217,7 +217,7 @@
           <button class="cta" type="submit">ارسال پیام</button>
           <span class="form-note">با ثبت فرم، شرایط <a href="index.html">فروش بتن‌یار</a> را می‌پذیرید. اطلاعات شما فقط برای تماس با شما استفاده می‌شود.</span>
         </form>
-        <div class="form-success" id="formSuccess" hidden>
+        <div class="form-success" id="formSuccess" hidden tabindex="-1">
           <span class="fs-ic"><svg class="ic"><use href="#i-check"/></svg></span>
           <h3>پیام شما ثبت شد</h3>
           <p>کارشناس فروش در کمتر از ۳۰ دقیقه کاری با شما تماس می‌گیرد.</p>
